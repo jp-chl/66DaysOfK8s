@@ -10,7 +10,7 @@ Photo by [Maximilian Weisbecker](https://unsplash.com/@maxweisbecker) on [Unspla
 
 Do learn daily until you reach 66, without a miss. Then you probably will create a new habit.
 
-In my case, I wanted to improve my skills in Kubernetes (check it [here](./challenge.md)).
+In my case, I wanted to improve my skills in Kubernetes (check it [here](./challenge/README.md)).
 
 ---
 
@@ -29,4 +29,5 @@ I thought it would be interesting to give it a try 🤓, and later I will be doi
 ---
 
 Cheers!
+
 JP
