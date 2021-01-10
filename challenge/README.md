@@ -1,8 +1,13 @@
 ## 66DaysOfK8s
 
-Here's my knowdlege base of what I've done in this challenge.
+Here's my knowledge base of what I've done in this challenge.
 
-Start date: Jan 11, 2021.
+* _Start date: Jan 11, 2021_.
+
+* _Last update: Jan 11, 2021_.
+
+
+---
 
 **Day**|**About**|**Summary**|**Detail**
 :-----:|:-----:|:-----:|:-----:

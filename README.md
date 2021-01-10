@@ -1,4 +1,4 @@
-# Introduction to #66DaysOfK8s
+# #66DaysOfK8s
 
 ![./readme-images/maximilian-weisbecker-Esq0ovRY-Zs-unsplash.jpg](./readme-images/maximilian-weisbecker-Esq0ovRY-Zs-unsplash.jpg)
 
