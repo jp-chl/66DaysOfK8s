@@ -6,12 +6,11 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Last update: Jan 11, 2021_.
 
-
 ---
 
 **Day**|**About**|**Summary**|**Detail**
 :-----:|:-----:|:-----:|:-----:
-1|TBC|TBC|[Day1](./week011/day1)
+1|k0s|Run a local k8s cluster with more than 1 node|[Day1](./week011/day1)
 2|TBC|TBC|[Day2](./week012/day2)
 3|TBC|TBC|[Day3](./week013/day3)
 4|TBC|TBC|[Day4](./week014/day4)
