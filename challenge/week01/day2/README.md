@@ -303,6 +303,6 @@ deployment.apps "snow" deleted
 
 ---
 
-## Demo
+## Demo
 
 [![asciicast](https://asciinema.org/a/3wRUO190WXsv7a9TDbvXqsyeA.svg)](https://asciinema.org/a/3wRUO190WXsv7a9TDbvXqsyeA)
