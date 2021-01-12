@@ -158,16 +158,144 @@ holiday-6769464945-2hst8   2/2     Running   0          35m
 
 ```bash
 # container 1: "-c c1"
-$ kubectl exec -ti $(kubectl -n default get pods -l "run=holiday" -o jsonpath='{.items[0].metadata.name}') -c c1 -- touch /tmp/test
+$ kubectl exec -ti $(kubectl get pods -l "run=holiday" -o jsonpath='{.items[0].metadata.name}') -c c1 -- touch /tmp/test
 # It works, no problem
 ```
 
 ```bash
 # container 2: "-c c2"
-$ kubectl exec -ti $(kubectl -n default get pods -l "run=holiday" -o jsonpath='{.items[0].metadata.name}') -c c2 -- touch /tmp/test
+$ kubectl exec -ti $(kubectl get pods -l "run=holiday" -o jsonpath='{.items[0].metadata.name}') -c c2 -- touch /tmp/test
 # It fails, as expected
 touch: /tmp/test: Read-only file system
 command terminated with exit code 1
 ```
 
+---
 
+Deploy snow:
+
+```bash
+$ kubectl apply -f ./snow.yaml
+deployment.apps/snow created
+```
+
+```bash
+$ kubectl get pods -l "app=snow"
+NAME                    READY   STATUS    RESTARTS   AGE
+snow-7fff94d5cb-dqmnp   1/1     Running   0          42s
+snow-7fff94d5cb-htnfv   1/1     Running   0          42s
+snow-7fff94d5cb-sxvzs   1/1     Running   0          42s
+```
+
+```bash
+$ kubectl get deploy snow
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+snow   3/3     3            3           105s
+```
+
+```bash
+# First pod: items[0]
+$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[0].metadata.name}') -- touch /tmp/test
+# It works, no problem
+```
+
+```bash
+# Second pod: items[1]
+$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[1].metadata.name}') -- touch /tmp/test
+# It works, no problem
+```
+
+```bash
+# Third pod: items[2]
+$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[2].metadata.name}') -- touch /tmp/test
+# It works, no problem
+```
+
+---
+
+In snow deployment (```snow.yaml```), add volume and volume mounts:
+
+* /var/cache/nginx
+
+* /var/run
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+# ...
+spec:
+# ...
+    spec:
+      containers:
+      - image: nginx:1.19.6
+        name: nginx
+        resources: {}
+        # new lines start here
+        securityContext:
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - name: write1
+          mountPath: /var/cache/nginx
+        - name: write2
+          mountPath: /var/run
+      volumes:
+      - name: write1
+        emptyDir: {}
+      - name: write2
+        emptyDir: {}
+      # new lines end here
+status: {}
+```
+
+Deploy update snow yaml:
+
+```bash
+$ kubectl apply -f ./snow.yaml
+deployment.apps/snow configured
+```
+
+```bash
+$ kubectl get pods -l "app=snow"
+NAME                    READY   STATUS    RESTARTS   AGE
+snow-575cd78c85-drxr7   1/1     Running   0          111s
+snow-575cd78c85-fstdb   1/1     Running   0          108s
+snow-575cd78c85-ghwfs   1/1     Running   0          105s
+```
+
+```bash
+# First pod: items[0]
+$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[0].metadata.name}') -- touch /tmp/test
+# It fails, as expected
+touch: cannot touch '/tmp/test': Read-only file system
+command terminated with exit code 1
+```
+
+```bash
+# First pod: items[0]
+# Attempt to write to "/var/cache/nginx" directory
+$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[0].metadata.name}') -- touch /var/cache/nginx/test
+# It works, as expected
+```
+
+```bash
+# First pod: items[0]
+# Attempt to write to "/var/run" directory
+$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[0].metadata.name}') -- touch /var/run/test
+# It works, as expected
+```
+
+The same result is expected on the other two pods ;-)
+
+---
+
+## Cleanup
+
+```bash
+$ kubectl delete -f ./holiday.yaml
+deployment.apps "holiday" deleted
+```
+
+```bash
+$ kubectl delete -f ./snow.yaml
+deployment.apps "snow" deleted
+```

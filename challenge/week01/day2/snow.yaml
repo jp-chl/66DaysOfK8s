@@ -21,4 +21,16 @@ spec:
       - image: nginx:1.19.6
         name: nginx
         resources: {}
+        securityContext:
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - name: write1
+          mountPath: /var/cache/nginx
+        - name: write2
+          mountPath: /var/run
+      volumes:
+      - name: write1
+        emptyDir: {}
+      - name: write2
+        emptyDir: {}
 status: {}
