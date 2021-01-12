@@ -122,10 +122,11 @@ status: {}
 
 ---
 
-In holiday.yaml, add SecurityContext on container level:
+In ```holiday.yaml```, add a second container, add SecurityContext on the second one and change both container names to ```c1``` and ```c2```, respectively:
 
 ```yaml
 apiVersion: apps/v1
+kind: Deployment
 # ...
 spec:
 # ...
@@ -134,10 +135,20 @@ spec:
 # ...
       - command:
 # ...
+        name: c1 # former name: holiday
+        resources: {}
+# Adding a second container
+      - command:
+        - sh
+        - -c
+        - sleep 1d
+        image: bash:5.1.0
         name: c2
         resources: {}
-        securityContext: # new line
-          readOnlyRootFilesystem: true # new line
+        securityContext:
+          readOnlyRootFilesystem: true
+        securityContext: # applies only to 2nd container
+          readOnlyRootFilesystem: true # applies only to 2nd container
 status: {}
 ```
 
@@ -199,17 +210,7 @@ $ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[0].meta
 # It works, no problem
 ```
 
-```bash
-# Second pod: items[1]
-$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[1].metadata.name}') -- touch /tmp/test
-# It works, no problem
-```
-
-```bash
-# Third pod: items[2]
-$ kubectl exec -ti $(kubectl get pods -l "app=snow" -o jsonpath='{.items[2].metadata.name}') -- touch /tmp/test
-# It works, no problem
-```
+> _The same result is expected on the other two pods ;-)_
 
 ---
 
@@ -247,7 +248,7 @@ spec:
 status: {}
 ```
 
-Deploy update snow yaml:
+Deploy updated snow yaml:
 
 ```bash
 $ kubectl apply -f ./snow.yaml
@@ -299,3 +300,9 @@ deployment.apps "holiday" deleted
 $ kubectl delete -f ./snow.yaml
 deployment.apps "snow" deleted
 ```
+
+---
+
+## Demo
+
+[![asciicast](https://asciinema.org/a/3wRUO190WXsv7a9TDbvXqsyeA.svg)](https://asciinema.org/a/3wRUO190WXsv7a9TDbvXqsyeA)
