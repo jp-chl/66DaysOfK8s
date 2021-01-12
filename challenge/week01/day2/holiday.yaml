@@ -23,6 +23,13 @@ spec:
         - -c
         - sleep 1d
         image: bash:5.1.0
-        name: holiday
+        name: c1
+        resources: {}
+      - command:
+        - sh
+        - -c
+        - sleep 1d
+        image: bash:5.1.0
+        name: c2
         resources: {}
 status: {}

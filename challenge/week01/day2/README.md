@@ -81,3 +81,42 @@ spec:
         resources: {}
 status: {}
 ```
+
+---
+
+Create snow deploy:
+
+```bash
+kubectl create deploy snow --image=nginx:1.19.6 -oyaml --dry-run > snow.yaml
+```
+
+Last command produces:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: snow
+  name: snow
+spec:
+  replicas: 1 # Here, change the replicas to 3
+  selector:
+    matchLabels:
+      app: snow
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: snow
+    spec:
+      containers:
+      - image: nginx:1.19.6
+        name: nginx
+        resources: {}
+status: {}
+```
+
+
