@@ -32,4 +32,6 @@ spec:
         image: bash:5.1.0
         name: c2
         resources: {}
+        securityContext:
+          readOnlyRootFilesystem: true
 status: {}

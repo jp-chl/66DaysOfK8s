@@ -24,6 +24,7 @@ Today, I've learned to create immutable pods. It allows us easy rollback, more r
 ## Setup
 
 * All tests runs on minikube.
+* All pods are deployed on default namespace
 
 ---
 
@@ -117,6 +118,56 @@ spec:
         name: nginx
         resources: {}
 status: {}
+```
+
+---
+
+In holiday.yaml, add SecurityContext on container level:
+
+```yaml
+apiVersion: apps/v1
+# ...
+spec:
+# ...
+    spec:
+      containers:
+# ...
+      - command:
+# ...
+        name: c2
+        resources: {}
+        securityContext: # new line
+          readOnlyRootFilesystem: true # new line
+status: {}
+```
+
+---
+
+Start holiday pod and check write permissions in both containers.
+
+```bash
+$ kubectl apply -f ./holiday.yaml
+deployment.apps/holiday created
+```
+
+```bash
+$ kubectl get pods
+NAME                       READY   STATUS    RESTARTS   AGE
+holiday-6769464945-2hst8   2/2     Running   0          35m
+```
+
+```bash
+# container 1: "-c c1"
+$ kubectl exec -ti $(kubectl -n default get pods -l "run=holiday" -o jsonpath='{.items[0].metadata.name}') -c c1 -- touch /tmp/test
+# It works, no problem
+```
+
+```bash
+# container 2: "-c c2"
+$ kubectl exec -ti $(kubectl -n default get pods -l "run=holiday" -o jsonpath='{.items[0].metadata.name}') -c c2 -- touch /tmp/test
+# It fails, as expected
+touch: /tmp/test: Read-only file system
+command terminated with exit code 1
 ```
 
 
