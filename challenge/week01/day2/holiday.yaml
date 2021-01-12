@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: holiday
+  name: holiday
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: holiday
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: holiday
+    spec:
+      containers:
+      - command:
+        - sh
+        - -c
+        - sleep 1d
+        image: bash:5.1.0
+        name: holiday
+        resources: {}
+status: {}

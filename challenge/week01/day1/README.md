@@ -1,4 +1,4 @@
-# Day 1 of #66DaysOfK8s.
+# Day 1 of #66DaysOfK8s
 
 _Last update: 2021-01-11_
 
@@ -8,7 +8,7 @@ Today, I've learned to create a K8s cluster with K0s (and Multipass). It is nice
 
 > _Based on: https://medium.com/better-programming/k0s-kubernetes-in-a-single-binary-224bb43f4520_
 
-#kubernetes #learning #challenge
+#kubernetes #learning #K8s #66DaysChallenge
 
 ---
 

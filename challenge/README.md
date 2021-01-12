@@ -4,14 +4,14 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 11, 2021_.
+* _Last update: Jan 12, 2021_.
 
 ---
 
 **Day**|**About**|**Summary**|**Detail**
 :-----:|:-----:|:-----:|:-----:
 1|k0s|Run a local k8s cluster with more than 1 node|[Day1](./week01/day1)
-2|TBC|TBC|[Day2](./week01/day2)
+2|Immutable pods|Test immutability with pods/deployments|[Day2](./week01/day2)
 3|TBC|TBC|[Day3](./week01/day3)
 4|TBC|TBC|[Day4](./week01/day4)
 5|TBC|TBC|[Day5](./week01/day5)
