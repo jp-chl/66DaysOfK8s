@@ -12,6 +12,12 @@ Today, I've learned to create immutable pods. It allows us easy rollback, more r
 
 ---
 
+## TL;DR
+
+[Demo](#demo)
+
+---
+
 ## Versions used
 
 * macOS Catalina 10.15.7
@@ -303,6 +309,6 @@ deployment.apps "snow" deleted
 
 ---
 
-## Demo
+# Demo
 
 [![asciicast](https://asciinema.org/a/3wRUO190WXsv7a9TDbvXqsyeA.svg)](https://asciinema.org/a/3wRUO190WXsv7a9TDbvXqsyeA)

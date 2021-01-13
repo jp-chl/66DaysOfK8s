@@ -65,7 +65,7 @@ v0.9.1
 
 ---
 
-## Create a configuration file
+## Create a configuration file
 
 Enter node, 1 in this case:
 
@@ -88,6 +88,8 @@ spec:
     podCIDR: 10.244.0.0/16
     serviceCIDR: 10.96.0.0/12
 ```
+
+---
 
 ## Initialization of the Cluster
 
@@ -206,7 +208,7 @@ $ multipass shell node3
 ubuntu@node3:~$ sudo k0s worker $TOKEN # Copy token from master
 ```
 
-After a while you will see all nodes available:
+After a while you will see the all nodes in Ready state:
 
 ```bash
 $ kubectl get nodes
