@@ -127,7 +127,7 @@ $ export SECRET_JWT_PAYLOAD=$(echo $SECRET_JWT_TOKEN | cut -d '.' -f2 | base64 -
 
 ---
 
-Let's create a pod (```pod-default.yaml```)to test with.
+Let's create a pod (```pod-default.yaml```) to test with.
 
 ```yaml
 apiVersion: v1
@@ -337,6 +337,11 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
+```bash
+$ kubectl apply -f custom-role-binding.yaml
+rolebinding.rbac.authorization.k8s.io/list-pods_demo-sa created
+```
+
 ---
 
 ## Using the ServiceAccount within a Pod
@@ -412,3 +417,4 @@ $ kubectl -n default exec -ti pod-demo-sa -- curl -H "Authorization: Bearer $POD
 
 # Demo
 
+[![asciicast](https://asciinema.org/a/DonpDUGAIX04JJqEpfBYb1CTB.svg)](https://asciinema.org/a/DonpDUGAIX04JJqEpfBYb1CTB)
