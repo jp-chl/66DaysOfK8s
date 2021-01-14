@@ -14,6 +14,12 @@ In my case, I wanted to improve my skills in Kubernetes (check it [here](./chall
 
 ---
 
+## Disclaimer
+
+Most of the material is available on public internet articles.
+
+---
+
 ## Background
 
 Recently, a friend of mine started publishing updates on LinkedIn about his [Data Science learning process](https://www.linkedin.com/search/results/all/?keywords=%2366DaysOfData&origin=GLOBAL_SEARCH_HEADER), but in an interesting approach. He's taken the idea from [Ken Lee](https://medium.com/r/?url=https%3A%2F%2Ftowardsdatascience.com%2Fwhy-im-starting-data-science-over-21bec8036ce9).

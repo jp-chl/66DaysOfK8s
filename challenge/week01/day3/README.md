@@ -21,9 +21,9 @@ Today, I've learned to use a ServiceAccount which allows a Pod to communicate wi
 ## Versions used
 
 * macOS Catalina 10.15.7
-* minikube version: v1.13.0
-* kubectl Client Version: v1.17.4
-* kubectl Server Version: v1.18.9
+* minikube: v1.13.0
+* kubectl Client: v1.17.4
+* kubectl Server: v1.18.9
 
 ---
 
@@ -411,6 +411,18 @@ $ kubectl -n default exec -ti pod-demo-sa -- curl -H "Authorization: Bearer $POD
     }
   ]
 }
+```
+
+---
+
+## Cleanup
+
+```bash
+kubectl delete -f ./custom-role.yaml
+kubectl delete -f ./custom-role-binding.yaml
+kubectl delete -f ./demo-service-account.yaml
+kubectl delete -f ./pod-default.yaml
+kubectl delete -f ./pod-demo-sa.yaml
 ```
 
 ---

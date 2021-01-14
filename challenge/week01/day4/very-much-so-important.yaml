@@ -1,0 +1,23 @@
+# Identical to not-so-important-pod.yaml but its labels
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: very-much-so-important
+    app: very-much-so-important
+  name: very-much-so-important
+  #namespace: default
+spec:
+  containers:
+  - image: nginx:1.17.6-alpine
+    name: very-much-so-important
+    ## -----------------------
+    resources: 
+      requests:
+        memory: 1.5Gi
+    ## -----------------------
+  restartPolicy: Never
+  #priorityClassName: # does not have any, i.e., zero
+  #priorityClassName: priority-class-important-pods
+status: {}

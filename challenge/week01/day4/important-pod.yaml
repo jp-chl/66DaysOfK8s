@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: important-pod
+    app: important-pod
+  name: important-pod
+  namespace: management
+spec:
+  containers:
+  - image: nginx:1.17.6-alpine
+    name: important-pod
+  restartPolicy: Never
+  priorityClassName: priority-class-important-pods
+status: {}

@@ -21,9 +21,9 @@ Today, I've learned to create immutable pods. It allows us easy rollback, more r
 ## Versions used
 
 * macOS Catalina 10.15.7
-* minikube version: v1.13.0
-* kubectl Client Version: v1.17.4
-* kubectl Server Version: v1.19.0
+* minikube: v1.13.0
+* kubectl Client: v1.17.4
+* kubectl Server: v1.19.0
 
 ---
 
