@@ -175,7 +175,7 @@ less-important-pod:
 
 ---
 
-Create a new Pod (```not-so-imporant-pod.yaml```) in default namespace and add 1.5 Gi of memory requests:
+Create a new Pod (```not-so-important-pod.yaml```) in default namespace and add 1.5 Gi of memory requests:
 
 ```yaml
 apiVersion: v1
@@ -202,7 +202,7 @@ status: {}
 ```
 
 ```bash
-$ kubectl -n default apply -f not-so-imporant-pod.yaml
+$ kubectl -n default apply -f not-so-important-pod.yaml
 pod/not-so-important-pod created
 ```
 
@@ -210,7 +210,7 @@ pod/not-so-important-pod created
 
 ## Attempt to allocate resources for a Pod according to its priority
 
-Based on ```not-so-imporant-pod.yaml```, create a similar yaml (```very-much-so-important.yaml```) with different labels but with the same memory requests.
+Based on ```not-so-important-pod.yaml```, create a similar yaml (```very-much-so-important.yaml```) with different labels but with the same memory requests.
 
 ```yaml
 # Identical to not-so-important-pod.yaml but its labels
