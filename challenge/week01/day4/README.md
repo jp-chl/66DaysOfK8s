@@ -31,7 +31,7 @@ Today, I've learned to use Pod's priorities. The priority indicates the importan
 
 * All tests runs on minikube.
 * Pods are deployed on different namespaces
-* 1 node (worker) with 2GB Ram
+* 1 node (worker) with 2Gi Ram
 
 ---
 
@@ -76,7 +76,7 @@ system-cluster-critical         2000000000   false            172m
 system-node-critical            2000001000   false            172m
 ```
 
-In this case, system-cluster-critical and system-node-critical have a priority of 2000000000.
+In this case, ```system-cluster-critical``` and ```system-node-critical``` have a priority greater than 2000000000.
 
 Let's create a new one (```priorityclass-important-pods.yaml```) in order to assign it to a pod (later on).
 
