@@ -13,7 +13,7 @@ Here's my knowledge base of what I've done in this challenge.
 1|k0s|Run a local k8s cluster with more than 1 node|[Day1](./week01/day1)
 2|Immutable pods|Test immutability with pods/deployments|[Day2](./week01/day2)
 3|ServiceAccount|Invoke K8s API Server|[Day3](./week01/day3)
-4|Pods priority|Attempt to allocate resources for a Pod according to its priority|[Day4](./week01/day4)
+4|Pods' priorities|Attempt to allocate resources for a Pod according to its priority|[Day4](./week01/day4)
 5|TBC|TBC|[Day5](./week01/day5)
 6|TBC|TBC|[Day6](./week01/day6)
 7|TBC|TBC|[Day7](./week01/day7)

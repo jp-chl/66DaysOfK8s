@@ -4,7 +4,7 @@ _Last update: 2021-01-14_
 
 ---
 
-Today, I've learned to use Pod's priorities. The priority indicates the importance of a Pod relative to other Pods.
+Today, I've learned to use Pods' priorities. The priority indicates the importance of a Pod relative to other Pods.
 
 > _Based on: [https://medium.com/faun/kubernetes-cka-hands-on-challenge-6-pod-priority-1fe95f613ac5](https://medium.com/faun/kubernetes-cka-hands-on-challenge-6-pod-priority-1fe95f613ac5)_
 
@@ -37,7 +37,7 @@ Today, I've learned to use Pod's priorities. The priority indicates the importan
 
 ## Tasks
 
-1. Compare priorites of pods
+1. Compare priorities of pods
 
 2. Attempt to allocate resources for a Pod according to its priority
 
@@ -165,7 +165,7 @@ $ kubectl -n management apply -f important-pod.yaml
 pod/important-pod created
 ```
 
-In namespace management only one pod will have PriorityClass.
+In namespace management, only one pod will have PriorityClass.
 
 ```bash
 $ kubectl -n management get pod -o jsonpath='{range .items[*]}{.metadata.name}: {.spec.priorityClassName}{"\n"}'
@@ -175,7 +175,7 @@ less-important-pod:
 
 ---
 
-Create a new Pod (```not-so-important-pod.yaml```) in default namespace and add 1.5 Gi of memory requests:
+Create a new Pod (```not-so-important-pod.yaml```) in the default namespace and add 1.5 Gi of memory requests:
 
 ```yaml
 apiVersion: v1
@@ -251,7 +251,7 @@ not-so-important-pod     1/1     Running   0          10m
 very-much-so-important   0/1     Pending   0          50s
 ```
 
-If we check pod's last event we'll notice an "insufficient memory" message; remember, we have built a 2 Gi node.
+If we check the pod's last event we'll notice an "insufficient memory" message; remember, we have built a 2 Gi node.
 
 ```bash
 $ kubectl get event -n default --field-selector involvedObject.name=very-much-so-important
@@ -263,9 +263,9 @@ LAST SEEN   TYPE      REASON             OBJECT                       MESSAGE
 
 ---
 
-In order to create the last Pod (very-much-so-important), we could assing the, already created, PriorityClass to it.
+In order to create the last Pod (very-much-so-important), we could assign the, already created, PriorityClass to it.
 
-Let's modify Pod definition:
+Let's modify the Pod definition:
 
 ```yaml
 
