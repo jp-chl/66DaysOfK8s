@@ -4,7 +4,7 @@ _Last update: 2021-01-15_
 
 ---
 
-Today, I have started a series of lessons to create a K8s cluster from scratch in GCP.
+Today, I have started a series of lessons in order to create a K8s cluster from scratch in GCP.
 In this lesson we will create two VMs, for the master and worker nodes (respectively).
 
 #kubernetes #learning #K8s #66DaysChallenge
@@ -35,7 +35,7 @@ In this lesson we will create two VMs, for the master and worker nodes (respecti
 
 ---
 
-## Create a private key
+## Create a private key
 
 In Mac you can use ssh-keygen (in Windows, for example, Putty)
 
