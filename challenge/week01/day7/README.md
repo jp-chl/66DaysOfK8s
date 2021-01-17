@@ -369,3 +369,102 @@ kube-proxy-v8hwr                           1/1     Running   1          15h
 kube-proxy-zrcjm                           1/1     Running   0          8m41s # new pod
 kube-scheduler-master                      1/1     Running   1          15h
 ```
+
+---
+
+If you describe the master node you can view its resources and status.
+
+_The master won’t allow non-infrastructure pods by default for security and resource contention reasons (take a look at the status of **[Taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)**)._
+
+```bash
+student@master:~$ kubectl describe node master
+Name:               master
+Roles:              master
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=master
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+Annotations:        kubeadm.alpha.kubernetes.io/cri-socket: /var/run/dockershim.sock
+                    node.alpha.kubernetes.io/ttl: 0
+                    projectcalico.org/IPv4Address: 10.2.0.3/32
+                    projectcalico.org/IPv4IPIPTunnelAddr: 192.168.219.64
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Sat, 16 Jan 2021 23:30:00 +0000
+Taints:             node-role.kubernetes.io/master:NoSchedule # TAINTS
+Unschedulable:      false
+Lease:
+  HolderIdentity:  master
+  AcquireTime:     <unset>
+  RenewTime:       Sun, 17 Jan 2021 22:13:43 +0000
+# OUTPUT OMITTED
+```
+
+Allow the master server to run non-infrastructure pods (not recommended in production environment). The master node begins tainted for security and performance reasons.
+
+```bash
+student@master:~$ kubectl describe node | grep -i taint
+Taints:             node-role.kubernetes.io/master:NoSchedule # Master
+Taints:             <none> # Worker
+```
+
+Note the **minus sign (-)** at the end, which is the syntax to remove a taint.
+> _The worker node does not have a taint so a "not found" error will raise_
+
+```bash
+student@master:~$ kubectl taint nodes --all node-role.kubernetes.io/master-
+node/master untainted
+error: taint "node-role.kubernetes.io/master" not found
+```
+
+---
+
+Test all pods are running.
+> _If not, you **may** find that the node has a new taint. Check the troubleshooting at the end of this page_
+
+```bash
+student@master:~$ kubectl get pods -A
+NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
+kube-system   calico-kube-controllers-7dbc97f587-z579v   1/1     Running   3          22h
+kube-system   calico-node-4z6hn                          1/1     Running   3          22h
+kube-system   calico-node-dnwz9                          1/1     Running   1          7h5m
+kube-system   coredns-66bff467f8-b4vdq                   1/1     Running   3          22h
+kube-system   coredns-66bff467f8-vhmg2                   1/1     Running   3          22h
+kube-system   etcd-master                                1/1     Running   3          22h
+kube-system   kube-apiserver-master                      1/1     Running   3          22h
+kube-system   kube-controller-manager-master             1/1     Running   3          22h
+kube-system   kube-proxy-v8hwr                           1/1     Running   3          22h
+kube-system   kube-proxy-zrcjm                           1/1     Running   1          7h5m
+kube-system   kube-scheduler-master                      1/1     Running   3          22h
+```
+
+---
+
+## Troubleshooting (tainted node, stuck pods)
+
+After untainting the master node, you may find there is a new taint (```node.kubernetes.io/not-ready:NoSchedule```).
+
+```bash
+student@master:~$ kubectl describe node | grep -i taint
+Taints:             node.kubernetes.io/not-ready:NoSchedule
+Taints:             <none>
+```
+
+So, remove the taint.
+
+```bash
+student@master: ̃$ kubectl taint nodes --all node.kubernetes.io/not-ready-
+node/master untainted
+error: taint "node-role.kubernetes.io/not-ready" not found
+```
+
+Now, check if the dns and calico pods are in _Running_ state. It may take a while to transition from _Pending_.
+
+**If** the coredns pods are stuck in ContainerCreating status, you may have to delete them.
+
+```bash
+student@master:~$ kubectl -n kube-system delete pod $(kubectl -n kube-system get pods -l "k8s-app=kube-dns")
+```
+
+When it finished, a new tunnel (_tunl0_) interface is available (```ip a``` command).
