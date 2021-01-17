@@ -23,6 +23,7 @@ In this lesson I have configured the master node with K8s required software.
 
 * Master node created ([part 1 link](../day5/README.md))
 * We'll be installing K8s version 1.18.1
+* _Savings tip_: You can stop VM instances if you're not using them.
 
 ---
 
@@ -509,9 +510,6 @@ Now, you can press tab while entering kubectl commands.
 
 ```bash
 $ student@master:~$ kubectl version
-```
-
-```json
 Client Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.1", GitCommit:"7879fc12a63337efff607952a323df90cdc7a335", GitTreeState:"clean", BuildDate:"2020-04-08T17:38:50Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"linux/amd64"}
 Server Version: version.Info{Major:"1", Minor:"18", GitVersion:"v1.18.1", GitCommit:"7879fc12a63337efff607952a323df90cdc7a335", GitTreeState:"clean", BuildDate:"2020-04-08T17:30:47Z", GoVersion:"go1.13.9", Compiler:"gc", Platform:"linux/amd64"}
 ```

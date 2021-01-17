@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 16, 2021_.
+* _Last update: Jan 17, 2021_.
 
 ---
 
@@ -16,7 +16,7 @@ Here's my knowledge base of what I've done in this challenge.
 4|Pods' priorities|Attempt to allocate resources for a Pod according to its priority|[Day4](./week01/day4)
 5|Create a K8s cluster from scratch in GCP|Part 1: VM instances setup|[Day5](./week01/day5)
 6|Create a K8s cluster from scratch in GCP|Part 2: Master node operative|[Day6](./week01/day6)
-7|TBC|TBC|[Day7](./week01/day7)
+7|Create a K8s cluster from scratch in GCP|Part 3: Worker node operative|[Day7](./week01/day7)
 8|TBC|TBC|[Day8](./week02/day8)
 9|TBC|TBC|[Day9](./week02/day9)
 10|TBC|TBC|[Day10](./week02/day10)
