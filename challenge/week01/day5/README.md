@@ -16,6 +16,7 @@ In this lesson we will create two VMs, for the master and worker nodes (respecti
 * macOS Catalina 10.15.7
 * Google Chrome 87.0.4280.88 (Official Build) (x86_64)
 * Native macOS clients for ssh-keygen and ssh
+* As of v1.19.0 the minimum size for VirtualBox is 3vCPU/4G memory/5G minimal OS for master and 1vCPU/2G memory/5G minimal OS for worker node. Most other providers work with 2CPU/7.5G.
 
 ---
 
