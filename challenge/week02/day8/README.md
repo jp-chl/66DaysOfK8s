@@ -5,7 +5,7 @@ _Last update: 2021-01-18_
 ---
 
 Today, I have worked in part 4 of a series of lessons in order to create a K8s cluster from scratch in GCP.
-In this lesson I have deployed a simple app on the new cluster, and access from outside the cluster.
+In this lesson I have deployed a simple app on the new cluster, and access from outside of it.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
@@ -23,7 +23,7 @@ In this lesson I have deployed a simple app on the new cluster, and access from 
 
 * Master node created ([part 1 link](../../week01/day5/README.md))
 * K8s software running on the master node ([part 2 link](../../week01/day6/README.md))
-* K8s software running on the worker node ([part 2 link](../../week01/day7/README.md))
+* K8s software running on the worker node ([part 3 link](../../week01/day7/README.md))
 * _Savings tip_: You can stop VM instances if you're not using them.
 * If you, like me, have had issues connecting to the VM instances via SSH (after stop and start them regularly), there is a workaround ([check this link](../../workarounds.md)).
 
