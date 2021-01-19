@@ -24,8 +24,9 @@ In this lesson I have added the worker node to the cluster.
 * Master node created ([part 1 link](../day5/README.md))
 * K8s software running on master node ([part 2 link](../day6/README.md))
 * We'll be installing K8s version 1.18.1 (on the worker node too)
-* Many of the steps in the master one applies in the worker one
+* Many of the steps in the master node applies in the worker one
 * _Savings tip_: You can stop VM instances if you're not using them.
+* If you, like me, have had issues connecting to the VM instances via SSH (after stop and start them regularly), there is a workaround ([check this link](../../workarounds.md)).
 
 ---
 

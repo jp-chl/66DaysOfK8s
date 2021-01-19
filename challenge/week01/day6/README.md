@@ -24,6 +24,7 @@ In this lesson I have configured the master node with K8s required software.
 * Master node created ([part 1 link](../day5/README.md))
 * We'll be installing K8s version 1.18.1
 * _Savings tip_: You can stop VM instances if you're not using them.
+* If you, like me, have had issues connecting to the VM instances via SSH (after stop and start them regularly), there is a workaround ([check this link](../../workarounds.md)).
 
 ---
 
