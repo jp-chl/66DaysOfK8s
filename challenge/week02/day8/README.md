@@ -5,7 +5,7 @@ _Last update: 2021-01-18_
 ---
 
 Today, I have worked in part 4 of a series of lessons in order to create a K8s cluster from scratch in GCP.
-In this lesson I have deployed a simple app on the new cluster, and access from outside of it.
+In this lesson I have deployed a simple app on the new cluster, and access it from outside the cluster.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
