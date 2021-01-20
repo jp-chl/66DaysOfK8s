@@ -5,7 +5,7 @@ _Last update: 2021-01-19_
 ---
 
 Today, I have started a series of lessons in order to review the Kubernetes Architecture.
-In this 1st part, a focus is in the master node components.
+In this 1st part, a focus is on the master node components.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
