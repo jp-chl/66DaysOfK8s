@@ -49,7 +49,7 @@ The master runs several processes:
 Additional components:
 
 * The **kube-controller-manager**, a core control loop daemon that determines the state of the cluster by communicating with the **kube-apiserver**. It watches the shared state of the cluster, and matches the desired state with the current one, if necessary. There are several controllers such as _node controller_, _replication controller_, _endpoints controllers_ and, _service account & token controller_ (notices when nodes go down, maintains the correct number of pods, joins services and pods and, handles access for new namespaces; respectively).
-* The **cloud-controller-manager** embeds cloud-specfic control logic, and links the cluster with cloud provider's API. Node, Route and Service controllers can have cloud dependencies (_deleted nodes in the cloud, setting up routes in the cloud infrastructure and, managing cloud provider load balancers; respectively_).
+* The **cloud-controller-manager** embeds cloud-specfic control logic, and links the cluster with cloud provider's API. _Node_, _Route_ and _Service_ controllers can have cloud dependencies (_deleted nodes in the cloud, setting up routes in the cloud infrastructure and, managing cloud provider load balancers; respectively_).
 
 > _The cloud-controller-manager handles tasks once managed by the _kube-controller-manager_._
 
