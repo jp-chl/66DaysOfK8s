@@ -4,10 +4,9 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 18, 2021_.
+* _Last update: Jan 20, 2021_.
 
 ---
-
 **Day**|**About**|**Summary**|**Detail**
 :-----:|:-----:|:-----:|:-----:
 1|k0s|Run a local k8s cluster with more than 1 node|[Day1](./week01/day1)
@@ -19,9 +18,7 @@ Here's my knowledge base of what I've done in this challenge.
 7|Create a K8s cluster from scratch in GCP|Part 3: Worker node operative|[Day7](./week01/day7)
 8|Create a K8s cluster from scratch in GCP|Part 4: Deploy a new app|[Day8](./week02/day8)
 9|Kubernetes Architecture|Part 1: Master node components|[Day9](./week02/day9)
-Today, I have started a series of lessons in order to review the Kubernetes Architecture.
-In this 1st part, a focus is in the master node components.
-10|TBC|TBC|[Day10](./week02/day10)
+10|Kubernetes Architecture|Part 2: Worker node components|[Day10](./week02/day10)
 11|TBC|TBC|[Day11](./week02/day11)
 12|TBC|TBC|[Day12](./week02/day12)
 13|TBC|TBC|[Day13](./week02/day13)

@@ -19,7 +19,7 @@ Try to connect again via SSH.
 ### Operation timed out
 
 Go to the VM instance, and Edit it.
-Find Custom metadata option and Click Add item and Type ```startup-script``` **as a key** and Copy and past the command ```sudo ufw allow ssh``` **as a value**. This command will enabled port 22 for SSH.
+Find Custom metadata option and Click Add item and Type ```startup-script``` **as a key** and Copy and past the command ```sudo ufw allow ssh``` **as a value**. This command will enable port 22 for SSH.
 
 Restart the instance and try to connect again via SSH.
 
