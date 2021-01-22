@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 20, 2021_.
+* _Last update: Jan 21, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -19,7 +19,7 @@ Here's my knowledge base of what I've done in this challenge.
 8|Create a K8s cluster from scratch in GCP|Part 4: Deploy a new app|[Day8](./week02/day8)
 9|Kubernetes Architecture|Part 1: Master node components|[Day9](./week02/day9)
 10|Kubernetes Architecture|Part 2: Worker node components|[Day10](./week02/day10)
-11|TBC|TBC|[Day11](./week02/day11)
+11|Kubernetes Architecture|Part 3: Controllers|[Day11](./week02/day11)
 12|TBC|TBC|[Day12](./week02/day12)
 13|TBC|TBC|[Day13](./week02/day13)
 14|TBC|TBC|[Day14](./week02/day14)
