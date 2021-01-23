@@ -38,11 +38,11 @@ On this 4th day, a focus is on Pods and specifically on Init containers.
 
 A pod can have many containers running applications in it, but it can run also one or many init containers (tag "```initContainers```" within Pod specification).
 
-A pod resources and limits are handled differently for them. They also don't support, for instance, ```livenessProbe``` and ```readinessProbe```.
+A pod resources and limits are handled differently for them. They also don't support, for instance, [livenessProbe and readinessProbe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
 ```Kubelet``` starts the application containers only when all of the init containers have completed their tasks (_"run to completion"_). After that, the app containers can start in parallel.
 
-Init containers can run with a different setup of the pod filesystem, and can access to Secrets that app containers can't.
+Init containers can run with a different setup of the pod filesystem, and can access to [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) that app containers can't.
 
 Any change to the init container image restarts the Pod.
 
@@ -136,6 +136,6 @@ service/mydb created
 
 ## References
 
-* [Pods (official site)](https://kubernetes.io/docs/concepts/overview/components/)
+* [Pods (official site)](https://kubernetes.io/docs/concepts/workloads/pods/)
 
 * [Init containers (official site)](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
