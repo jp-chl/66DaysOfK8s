@@ -40,7 +40,7 @@ A pod can have many containers running applications in it, but it can run also o
 
 A pod resources and limits are handled differently for them. They also don't support, for instance, [livenessProbe and readinessProbe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
-```Kubelet``` starts the application containers only when all of the init containers have completed their tasks (_"run to completion"_). After that, the app containers can start in parallel.
+[Kubelet](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day10) starts the application containers only when all of the init containers have completed their tasks (_"run to completion"_). After that, the app containers can start in parallel.
 
 Init containers can run with a different setup of the pod filesystem, and can access to [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/) that app containers can't.
 
