@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 21, 2021_.
+* _Last update: Jan 22, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**

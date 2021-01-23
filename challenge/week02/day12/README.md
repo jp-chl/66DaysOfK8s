@@ -1,4 +1,4 @@
-# Day 10 of #66DaysOfK8s
+# Day 12 of #66DaysOfK8s
 
 _Last update: 2021-01-22_
 
