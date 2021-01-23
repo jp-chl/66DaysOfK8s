@@ -139,3 +139,5 @@ service/mydb created
 * [Pods (official site)](https://kubernetes.io/docs/concepts/workloads/pods/)
 
 * [Init containers (official site)](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)
+
+* [Init container build pattern (Red Hat blog articles)](https://developers.redhat.com/blog/2019/04/01/init-container-build-pattern-knative-build-with-plain-old-kubernetes-deployment/)
