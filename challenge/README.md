@@ -21,7 +21,7 @@ Here's my knowledge base of what I've done in this challenge.
 10|Kubernetes Architecture|Part 2: Worker node components|[Day10](./week02/day10)
 11|Kubernetes Architecture|Part 3: Controllers|[Day11](./week02/day11)
 12|Kubernetes Architecture|Part 4: Init containers|[Day12](./week02/day12)
-13|TBC|TBC|[Day13](./week02/day13)
+13|Kubernetes Architecture|Part 5: Pods|[Day13](./week02/day13)
 14|TBC|TBC|[Day14](./week02/day14)
 15|TBC|TBC|[Day15](./week03/day15)
 16|TBC|TBC|[Day16](./week03/day16)
