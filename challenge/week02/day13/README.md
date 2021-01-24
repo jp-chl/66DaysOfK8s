@@ -49,7 +49,7 @@ There is only one IP address per Pod, for almost every [network plugin](https://
 
 ---
 
-Normally a Pod is created with workload resources like a [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) or a Job. Also, with a StatefulSet resource if state tracking is needed.
+Normally a Pod is created with workload resources like a [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) or a [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/). Also, with a [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) resource if state tracking is needed.
 
 A Pod can run a single container (most common use case), or multiple containers share resources (storage, networking) within the same Pod. In the latter, usually one container is an application and other can be a container that handles tasks like logging or traffic ([sidecar pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar)).
 
