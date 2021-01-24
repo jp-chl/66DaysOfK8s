@@ -11,7 +11,7 @@ On this 5th day, a focus is on Pods.
 
 ---
 
-## TL;DR
+## TL;DR
 
 _"A Pod is a group of one or more application containers (such as Docker) and includes shared storage (volumes), IP address and information about how to run them."_ (official Kubernetes documentation)
 
@@ -68,9 +68,3 @@ All Pods are scheduled from the Control Plane except [Static Pods](https://kuber
 * [Sidecar pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar)
 
 * [Review of Container-to-Container Communications in Kubernetes](https://thenewstack.io/review-of-container-to-container-communications-in-kubernetes/)
-
-* []()
-
-* []()
-
-* []()
