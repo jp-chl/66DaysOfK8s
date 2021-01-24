@@ -45,6 +45,8 @@ A Pod is a group of one or more containers, with shared storage and network reso
 
 A Pod can contain [init containers](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day12) that run during Pod startup, or also [ephemeral containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) (mainly for debugging).
 
+There is only one IP address per Pod, for almost every [network plugin](https://kubernetes.io/docs/concepts/cluster-administration/networking/). Multiple containers in a Pod share the same IP. To communicate with each other, there are some options like [IPC, the loopback interface or a shared filesystem](https://thenewstack.io/review-of-container-to-container-communications-in-kubernetes/).
+
 ---
 
 Normally a Pod is created with workload resources like a [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) or a Job. Also, with a StatefulSet resource if state tracking is needed.
@@ -65,7 +67,7 @@ All Pods are scheduled from the Control Plane except [Static Pods](https://kuber
 
 * [Sidecar pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar)
 
-* []()
+* [Review of Container-to-Container Communications in Kubernetes](https://thenewstack.io/review-of-container-to-container-communications-in-kubernetes/)
 
 * []()
 
