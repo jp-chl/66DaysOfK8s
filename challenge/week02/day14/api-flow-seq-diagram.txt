@@ -16,8 +16,7 @@ kube-apiserver->etcd: Check cluster state
 etcd->kube-apiserver: cluster state
 kube-apiserver->kube-controller-manager: pod creation request
 kube-controller-manager->kube-controller-manager: validates status vs spec
-kube-controller-manager->kub
-e-apiserver: pod spec
+kube-controller-manager->kube-apiserver: pod spec
 kube-apiserver->kube-scheduler: request allocation
 kube-scheduler->kube-apiserver: node to allocate pod
 kube-apiserver-->kubelet: pod spec
@@ -29,3 +28,4 @@ kubelet->kube-apiserver: node state
 kube-proxy->kube-apiserver: node state 
 kube-apiserver->kube-controller-manager: inform pod status
 kube-controller-manager->kube-controller-manager: matches status vs spec
+kube-apiserver-->Actor: pod creation response
