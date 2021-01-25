@@ -34,7 +34,7 @@ Understand:
 ### API Call Flow
 
 This is a basic explanation of the API Call Flow. There are many components not mentioned.
-In this example, we are going to see how the API call flow in the case of a Pod creation request.
+In this example, we are going to see how the API calls flow in the case of a Pod creation request.
 
 ![Pod creation API Call Flow example](readme-images/api-flow.png)
 
