@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 23, 2021_.
+* _Last update: Jan 24, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -22,7 +22,7 @@ Here's my knowledge base of what I've done in this challenge.
 11|Kubernetes Architecture|Part 3: Controllers|[Day11](./week02/day11)
 12|Kubernetes Architecture|Part 4: Init containers|[Day12](./week02/day12)
 13|Kubernetes Architecture|Part 5: Pods|[Day13](./week02/day13)
-14|TBC|TBC|[Day14](./week02/day14)
+14|Kubernetes Architecture|Part 6: API Call Flow (example)|[Day14](./week02/day14)
 15|TBC|TBC|[Day15](./week03/day15)
 16|TBC|TBC|[Day16](./week03/day16)
 17|TBC|TBC|[Day17](./week03/day17)

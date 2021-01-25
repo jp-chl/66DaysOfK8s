@@ -1,0 +1,31 @@
+title Pod creation call flow example
+
+Actor
+kube-apiserver
+etcd
+kube-controller-manager
+kube-scheduler
+kubelet
+container-engine
+kube-proxy
+
+
+Actor-->kube-apiserver: pod creation request (e.g. kubectl)
+kube-apiserver->kube-apiserver: Auth (RBAC)
+kube-apiserver->etcd: Check cluster state
+etcd->kube-apiserver: cluster state
+kube-apiserver->kube-controller-manager: pod creation request
+kube-controller-manager->kube-controller-manager: validates status vs spec
+kube-controller-manager->kub
+e-apiserver: pod spec
+kube-apiserver->kube-scheduler: request allocation
+kube-scheduler->kube-apiserver: node to allocate pod
+kube-apiserver-->kubelet: pod spec
+kubelet->container-engine: container(s) creation request
+container-engine->container-engine: container(s) creation
+kube-apiserver-->kube-proxy: networking requests (e.g. services)
+kube-proxy->kube-proxy: IP tables / IPVs / Firewall rules
+kubelet->kube-apiserver: node state
+kube-proxy->kube-apiserver: node state 
+kube-apiserver->kube-controller-manager: inform pod status
+kube-controller-manager->kube-controller-manager: matches status vs spec
