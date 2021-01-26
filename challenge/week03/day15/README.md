@@ -4,8 +4,13 @@ _Last update: 2021-01-25_
 
 ---
 
-Today, I have worked in part 7 of a series of lessons in order to review the Kubernetes Architecture.
+Day 15 of #66DaysOfK8s. Today, I have worked in part 7 of a series of lessons in order to review the Kubernetes Architecture.
 On this 7th day, a focus is on Pod Networking.
+Repo: https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week03/day15
+
+#kubernetes #learning #K8s #66DaysChallenge
+
+
 
 #kubernetes #learning #K8s #66DaysChallenge
 
@@ -66,3 +71,5 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 
 * [Differences between system V and Posix semaphores](
 https://stackoverflow.com/questions/368322/differences-between-system-v-and-posix-semaphores)
+
+* [Introduction to Kubernetes* Networking and Acceleration with DPDK](https://01.org/kubernetes/blogs/qwang10/2019/introduction-kubernetes-networking-and-acceleration-dpdk)
