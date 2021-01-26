@@ -1,6 +1,6 @@
 # Day 14 of #66DaysOfK8s
 
-_Last update: 2021-01-24_
+_Last update: 2021-01-25_
 
 ---
 

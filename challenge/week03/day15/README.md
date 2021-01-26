@@ -48,7 +48,7 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 
 ### Container Network
 
-* Containers within Pods share the same namespace and IP address, configured by kube-proxy.
+* Containers within Pods share the same namespace and IP address, configured by [kube-proxy](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day10).
 
 * Container's IP address is assigned even before their own start. This IP is set for the entire Pod lifecycle.
 
@@ -56,7 +56,7 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 
 * Containers that want to interact with others running in a different Pod can use IP networking to communicate.
 
-* A service connects the network traffic from a node high-number port to an endpoint (created at service start-up) using iptables and IPVS. The kube-controller-manager monitors if any endpoint/service is needed to create, update or delete.
+* A service connects the network traffic from a node high-number port to an endpoint (created at service start-up) using iptables and IPVS. The [kube-controller-manager](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day11) monitors if any endpoint/service is needed to create, update or delete.
 
 ---
 
