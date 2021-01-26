@@ -41,7 +41,7 @@ Understand:
 
 ### Pods
 
-A Pod is a group of one or more containers, with shared storage and network resources
+A Pod is a group of one or more containers, with shared storage and network resources.
 
 A Pod can contain [init containers](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day12) that run during Pod startup, or also [ephemeral containers](https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/) (mainly for debugging).
 
