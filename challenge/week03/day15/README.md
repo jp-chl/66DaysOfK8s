@@ -53,7 +53,7 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 
 ### Container Network
 
-* Containers within Pods share the same namespace and IP address, configured by [kube-proxy](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day10).
+* Containers within Pods share the same namespace and IP address.
 
 * Container's IP address is assigned even before their own start. This IP is set for the entire Pod lifecycle.
 
@@ -62,6 +62,8 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 * Containers that want to interact with others running in a different Pod can use IP networking to communicate.
 
 * A service connects the network traffic from a node high-number port to an endpoint (created at service start-up) using iptables and IPVS. The [kube-controller-manager](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day11) monitors if any endpoint/service is needed to create, update or delete.
+
+* A service maps a single IP address to a set of Pods via [kube-proxy](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day10) (a process that maps virtual IP addresses to a group of actual Pod IP addresses). Then, the service proxies requests to a Pod.
 
 ---
 
@@ -73,3 +75,5 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 https://stackoverflow.com/questions/368322/differences-between-system-v-and-posix-semaphores)
 
 * [Introduction to Kubernetes* Networking and Acceleration with DPDK](https://01.org/kubernetes/blogs/qwang10/2019/introduction-kubernetes-networking-and-acceleration-dpdk)
+
+* [Kubernetes Networking Guide for Beginners](https://matthewpalmer.net/kubernetes-app-developer/articles/kubernetes-networking-guide-beginners.html)
