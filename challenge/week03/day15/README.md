@@ -6,11 +6,6 @@ _Last update: 2021-01-25_
 
 Day 15 of #66DaysOfK8s. Today, I have worked in part 7 of a series of lessons in order to review the Kubernetes Architecture.
 On this 7th day, a focus is on Pod Networking.
-Repo: https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week03/day15
-
-#kubernetes #learning #K8s #66DaysChallenge
-
-
 
 #kubernetes #learning #K8s #66DaysChallenge
 

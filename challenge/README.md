@@ -24,7 +24,7 @@ Here's my knowledge base of what I've done in this challenge.
 13|Kubernetes Architecture|Part 5: Pods|[Day13](./week02/day13)
 14|Kubernetes Architecture|Part 6: API Call Flow (example)|[Day14](./week02/day14)
 15|Kubernetes Architecture|Part 7: Pod networking|[Day15](./week03/day15)
-16|TBC|TBC|[Day16](./week03/day16)
+16|Kubernetes Architecture|Part 8: Cluster Networking|[Day16](./week03/day16)
 17|TBC|TBC|[Day17](./week03/day17)
 18|TBC|TBC|[Day18](./week03/day18)
 19|TBC|TBC|[Day19](./week03/day19)

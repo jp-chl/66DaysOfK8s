@@ -26,6 +26,7 @@ kube-apiserver-->kube-proxy: networking requests (e.g. services)
 kube-proxy->kube-proxy: IP tables / IPVs / Firewall rules
 kubelet->kube-apiserver: node state
 kube-proxy->kube-apiserver: node state 
-kube-apiserver->kube-controller-manager: inform pod status
+kube-apiserver-->kube-controller-manager: inform pod status
 kube-controller-manager->kube-controller-manager: matches status vs spec
+kube-apiserver-->etcd: update cluster state
 kube-apiserver-->Actor: pod creation response

@@ -53,4 +53,5 @@ The flow goes as follows:
 * The kubelet requests the creation to the container-engine (typically Docker or cri-o).
 * The kube-proxy handles networking such as the required services (also IP tables, IPVs or firewall rules).
 * Then, both kubelet and kube-proxy inform back to kube-apiserver about the node state.
-* Finally, kube-apiserver informs kube-controller-manager and the latter matches status vs spec (if applies).
+* Kube-apiserver informs kube-controller-manager and the latter matches status vs spec (if applies).
+* Kube-apiserver requests etcd for cluster state update
