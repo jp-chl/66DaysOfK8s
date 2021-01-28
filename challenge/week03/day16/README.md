@@ -4,7 +4,7 @@ _Last update: 2021-01-26_
 
 ---
 
-Day 16 of #66DaysOfK8s. Today, I have worked in the last part of a series of lessons in order to review the Kubernetes Architecture.
+Today, I have worked in the last part of a series of lessons in order to review the Kubernetes Architecture.
 On this 8th day, a focus is on Cluster Networking.
 
 #kubernetes #learning #K8s #66DaysChallenge
