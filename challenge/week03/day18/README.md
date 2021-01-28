@@ -655,10 +655,12 @@ student@master:~$ kubectl uncordon worker
 node/worker uncordoned
 ```
 
+```bash
 student@master:~$ kubectl get nodes
 NAME     STATUS   ROLES    AGE   VERSION
 master   Ready    master   11d   v1.19.0
 worker   Ready    <none>   11d   v1.19.0
+```
 
 ---
 ## References
