@@ -63,6 +63,8 @@ All Pods are scheduled from the Control Plane except [Static Pods](https://kuber
 
 ## References
 
+* [Part 6: Pod creation API Call Flow](../day13)
+
 * [Pods (official site)](https://kubernetes.io/docs/concepts/workloads/pods/)
 
 * [Sidecar pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/sidecar)

@@ -585,3 +585,9 @@ networking:
   serviceSubnet: 10.96.0.0/12
 scheduler: {}
 ```
+
+---
+
+## References
+
+* [Part 3: Add worker node to the cluster](../day7)

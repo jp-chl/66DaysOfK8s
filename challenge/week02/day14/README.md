@@ -5,7 +5,7 @@ _Last update: 2021-01-25_
 ---
 
 Today, I have worked in part 6 of a series of lessons in order to review the Kubernetes Architecture.
-On this 6th day, a focus is on API Call Flow.
+On this 6th day, a focus is on Pod creation API Call Flow.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
@@ -55,3 +55,9 @@ The flow goes as follows:
 * Then, both kubelet and kube-proxy inform back to kube-apiserver about the node state.
 * Kube-apiserver informs kube-controller-manager and the latter matches status vs spec (if applies).
 * Kube-apiserver requests etcd for cluster state update
+
+---
+
+## References
+
+* [Part 7: Pod networking](../week03/day15)

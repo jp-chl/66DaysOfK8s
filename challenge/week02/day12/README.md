@@ -136,6 +136,8 @@ service/mydb created
 
 ## References
 
+* [Part 5: Pods](../day13)
+
 * [Pods (official site)](https://kubernetes.io/docs/concepts/workloads/pods/)
 
 * [Init containers (official site)](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/)

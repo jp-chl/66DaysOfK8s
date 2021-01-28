@@ -74,6 +74,8 @@ As an alpha feature, it isn't enabled by default.
 
 ## References
 
+* [Part 3: Kubernetes Controllers](../day11)
+
 * [Cluster Architecture (official site)](https://kubernetes.io/docs/concepts/overview/components/)
 
 * [Kubernetes Architecture explained (15 minutes video)](https://www.youtube.com/watch?v=umXEmn3cMWY&ab_channel=TechWorldwithNana)

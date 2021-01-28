@@ -469,3 +469,9 @@ student@master:~$ kubectl -n kube-system delete pod $(kubectl -n kube-system get
 ```
 
 When it finished, a new tunnel (_tunl0_) interface is available (```ip a``` command).
+
+---
+
+## References
+
+* [Part 4: Deploy a simple app on the new cluster](../day8)

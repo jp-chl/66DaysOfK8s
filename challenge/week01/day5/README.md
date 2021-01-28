@@ -228,3 +228,9 @@ applicable law.
 
 student@worker:~$
 ```
+
+---
+
+## References
+
+* [Part 2: Master node setup](../day6)

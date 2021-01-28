@@ -64,6 +64,8 @@ In terms of networking, all containers within Pods share the same/unique IP addr
 
 ## References
 
+* [Part 8: Cluster Networking](../day16)
+
 * [What is the role of 'pause' container? (Google groups)](https://groups.google.com/g/kubernetes-users/c/jVjv0QK4b_o?pli=1)
 
 * [Differences between system V and Posix semaphores](

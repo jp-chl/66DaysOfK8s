@@ -77,6 +77,8 @@ If a controller fails to process an event, it can push it back to the key to pro
 
 ## References
 
+* [Part 4: Init containers](../day12)
+
 * [A deep dive into Kubernetes controllers](https://engineering.bitnami.com/articles/a-deep-dive-into-kubernetes-controllers.html)
 
 * [Understanding Kubernetes controllers part I – queues and the core controller loop](https://leftasexercise.com/2019/07/08/understanding-kubernetes-controllers-part-i-queues-and-the-core-controller-loop/)
