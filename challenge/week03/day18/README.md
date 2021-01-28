@@ -4,7 +4,7 @@ _Last update: 2021-01-28_
 
 ---
 
-Today, I have worked doing a basic node maintenance of a cluster (created from scratch in GCP).
+Today, I have worked doing basic node maintenance of a cluster (created from scratch in GCP).
 This second session involves upgrading Kubernetes cluster version, in the master node and the worker as well.
 
 #kubernetes #learning #K8s #66DaysChallenge
@@ -65,7 +65,7 @@ Reading state information... Done
 
 ---
 
-Currently the cluster should be using K8s 1.18.1 version:
+Currently, the cluster should be using K8s 1.18.1 version:
 
 ```bash
 student@master:~$ kubectl get nodes
