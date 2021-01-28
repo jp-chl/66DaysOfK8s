@@ -28,7 +28,6 @@ This first part involves backing up the etcd database.
 ## Tasks
 
 * Backup the etcd database
-* Upgrade the cluster Kubernetes version
 
 ---
 
@@ -215,5 +214,7 @@ drwxr-xr-x 2 root root    4096 Jan 28 01:28 etcd-01-28-21
 ---
 
 ## References
+
+* [Part 2: Upgrade cluster](../day18)
 
 * [Operating etcd clusters for Kubernetes (official site)](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/)

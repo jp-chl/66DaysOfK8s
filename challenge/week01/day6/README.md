@@ -198,7 +198,7 @@ Created symlink /etc/systemd/system/multi-user.target.wants/kubelet.service → 
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
 ```
 
-Hold the software at the recent but stable version
+**Hold** the software at the recent but stable version
 
 ```bash
 $ root@master:~$ apt-mark hold kubelet kubeadm kubectl

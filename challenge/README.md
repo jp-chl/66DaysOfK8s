@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 27, 2021_.
+* _Last update: Jan 28, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -26,7 +26,7 @@ Here's my knowledge base of what I've done in this challenge.
 15|Kubernetes Architecture|Part 7: Pod networking|[Day15](./week03/day15)
 16|Kubernetes Architecture|Part 8: Cluster Networking|[Day16](./week03/day16)
 17|Kubernetes Maintenance|Part 1: Backup etcd database|[Day17](./week03/day17)
-18|TBC|TBC|[Day18](./week03/day18)
+18|Kubernetes Maintenance|Part 2: Upgrade cluster|[Day18](./week03/day18)
 19|TBC|TBC|[Day19](./week03/day19)
 20|TBC|TBC|[Day20](./week03/day20)
 21|TBC|TBC|[Day21](./week03/day21)
