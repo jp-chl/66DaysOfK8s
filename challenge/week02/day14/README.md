@@ -60,4 +60,4 @@ The flow goes as follows:
 
 ## References
 
-* [Part 7: Pod networking](../week03/day15)
+* [Part 7: Pod Networking](../week03/day15)

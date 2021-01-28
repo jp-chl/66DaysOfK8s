@@ -63,7 +63,7 @@ All Pods are scheduled from the Control Plane except [Static Pods](https://kuber
 
 ## References
 
-* [Part 6: Pod creation API Call Flow](../day13)
+* [Part 6: Pod creation API Call Flow](../day14)
 
 * [Pods (official site)](https://kubernetes.io/docs/concepts/workloads/pods/)
 
