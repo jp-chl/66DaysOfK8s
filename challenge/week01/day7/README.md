@@ -474,4 +474,4 @@ When it finished, a new tunnel (_tunl0_) interface is available (```ip a``` comm
 
 ## References
 
-* [Part 4: Deploy a simple app on the new cluster](../day8)
+* [Part 4: Deploy a simple app on the new cluster](../week02/day8)
