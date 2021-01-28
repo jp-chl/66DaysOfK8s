@@ -450,8 +450,217 @@ worker   Ready    <none>   11d   v1.18.1
 
 ---
 
+### Upgrade worker node
+
+Using the SSK keys obtained in a [previous lab](../../week01/day5/README.md), connect via ssh to the GCP VM instance associated with the worker node:
+
+```bash
+# 1.2.3.4: replace with your own WORKER node public ip
+$ ssh -i "K8sPK1" student@1.2.3.4
+The authenticity of host '1.2.3.4 (1.2.3.4)' can't be established.
+ECDSA key fingerprint is SHA256:aknddjkj2ndbj213ndb23bndoi2ndbnjx.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '1.2.3.4' (ECDSA) to the list of known hosts.
+
+...
+
+Last login: Fri Jan 15 11:46:26 2021 from 1.2.3.4
+student@worker:~$
+```
+
+---
+
+Remove hold on kubeadm too.
+
+```bash
+student@worker:~$ sudo apt-mark unhold kubeadm
+Canceled hold on kubeadm.
+```
+
+---
+
+Upgrade kubeadm also to 1.19.0-00 version.
+
+```bash
+student@worker:~$ sudo apt-get update
+Hit:1 http://us-central1.gce.archive.ubuntu.com/ubuntu bionic InRelease
+# ...
+Reading package lists... Done
+```
+
+```bash
+student@worker:~$ sudo apt-get install -y kubeadm=1.19.0-00
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libnuma1
+Use 'sudo apt autoremove' to remove it.
+The following packages will be upgraded:
+  kubeadm
+1 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
+Need to get 7759 kB of archives.
+After this operation, 705 kB disk space will be freed.
+Get:1 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.19.0-00 [7759 kB]
+Fetched 7759 kB in 1s (12.8 MB/s)
+(Reading database ... 65906 files and directories currently installed.)
+Preparing to unpack .../kubeadm_1.19.0-00_amd64.deb ...
+Unpacking kubeadm (1.19.0-00) over (1.18.1-00) ...
+Setting up kubeadm (1.19.0-00) ...
+```
+
+And hold kubeadm again.
+
+```bash
+student@worker:~$ sudo apt-mark hold kubeadm
+kubeadm set on hold.
+```
+
+---
+
+Just like in the master node, drain pods in the worker node. **Do this in the master node**.
+
+```bash
+student@master:~$ kubectl drain worker --ignore-daemonsets
+node/worker cordoned
+WARNING: ignoring DaemonSet-managed Pods: kube-system/calico-node-dnwz9, kube-system/kube-proxy-2l8pw
+evicting pod kube-system/calico-kube-controllers-7dbc97f587-5h46c
+evicting pod kube-system/coredns-f9fd979d6-d48bv
+evicting pod kube-system/coredns-f9fd979d6-klk6t
+pod/calico-kube-controllers-7dbc97f587-5h46c evicted
+pod/coredns-f9fd979d6-klk6t evicted
+pod/coredns-f9fd979d6-d48bv evicted
+node/worker evicted
+```
+
+---
+
+Back to the worker node, upgrade it.
+
+```bash
+student@worker:~$ sudo kubeadm upgrade node
+[upgrade] Reading configuration from the cluster...
+[upgrade] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -oyaml'
+[preflight] Running pre-flight checks
+[preflight] Skipping prepull. Not a control plane node.
+[upgrade] Skipping phase. Not a control plane node.
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[upgrade] The configuration for this node was successfully updated!
+[upgrade] Now you should go ahead and upgrade the kubelet package using your package manager.
+```
+
+---
+
+Remove hold on kubelet.
+
+```bash
+student@worker:~$ sudo apt-mark unhold kubelet
+Canceled hold on kubelet.
+```
+
+Remove hold on kubectl.
+
+```bash
+student@worker:~$ sudo apt-mark unhold kubectl
+Canceled hold on kubectl.
+```
+
+Upgrade kubelet.
+
+```bash
+student@worker:~$ sudo apt-get install -y kubelet=1.19.0-00
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libnuma1
+Use 'sudo apt autoremove' to remove it.
+The following packages will be upgraded:
+  kubelet
+1 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
+Need to get 18.2 MB of archives.
+After this operation, 3297 kB disk space will be freed.
+Get:1 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.19.0-00 [18.2 MB]
+Fetched 18.2 MB in 1s (16.6 MB/s)
+(Reading database ... 65906 files and directories currently installed.)
+Preparing to unpack .../kubelet_1.19.0-00_amd64.deb ...
+Unpacking kubelet (1.19.0-00) over (1.18.1-00) ...
+Setting up kubelet (1.19.0-00) ...
+```
+
+Upgrade kubectl
+
+```bash
+student@worker:~$ sudo apt-get install -y kubectl=1.19.0-00
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  libnuma1
+Use 'sudo apt autoremove' to remove it.
+The following packages will be upgraded:
+  kubectl
+1 upgraded, 0 newly installed, 0 to remove and 23 not upgraded.
+Need to get 8349 kB of archives.
+After this operation, 1024 kB disk space will be freed.
+Get:1 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.19.0-00 [8349 kB]
+Fetched 8349 kB in 1s (16.5 MB/s)
+(Reading database ... 65906 files and directories currently installed.)
+Preparing to unpack .../kubectl_1.19.0-00_amd64.deb ...
+Unpacking kubectl (1.19.0-00) over (1.18.1-00) ...
+Setting up kubectl (1.19.0-00) ...
+```
+
+```bash
+student@worker:~$ kubectl get nodes
+NAME     STATUS                     ROLES    AGE   VERSION
+master   Ready                      master   11d   v1.19.0
+worker   Ready,SchedulingDisabled   <none>   11d   v1.19.0
+```
+
+Hold updates for kubelet.
+
+```bash
+student@worker:~$ sudo apt-mark hold kubelet
+kubelet set on hold.
+```
+
+And hold for kubectl.
+
+```bash
+student@worker:~$ sudo apt-mark hold kubectl
+kubectl set on hold.
+```
+
+---
+
+Restart daemons.
+
+```bash
+student@worker:~$ sudo systemctl daemon-reload
+# (no output expected)
+```
+
+```bash
+student@worker:~$ sudo systemctl restart kubelet
+# (no output expected)
+```
+
+---
+
+**Back to the master node**. Enable scheduling for the worker node.
+
+```bash
+student@master:~$ kubectl uncordon worker
+node/worker uncordoned
+```
+
+student@master:~$ kubectl get nodes
+NAME     STATUS   ROLES    AGE   VERSION
+master   Ready    master   11d   v1.19.0
+worker   Ready    <none>   11d   v1.19.0
+
+---
 ## References
 
 * [Upgrade K8s cluster (official site)](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)
-
-
