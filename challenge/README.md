@@ -27,7 +27,7 @@ Here's my knowledge base of what I've done in this challenge.
 16|Kubernetes Architecture|Part 8: Cluster Networking|[Day16](./week03/day16)
 17|Kubernetes Maintenance|Part 1: Backup etcd database|[Day17](./week03/day17)
 18|Kubernetes Maintenance|Part 2: Upgrade cluster|[Day18](./week03/day18)
-19|TBC|TBC|[Day19](./week03/day19)
+19|Exercise| CPU and memory constraints|[Day19](./week03/day19)
 20|TBC|TBC|[Day20](./week03/day20)
 21|TBC|TBC|[Day21](./week03/day21)
 22|TBC|TBC|[Day22](./week04/day22)
