@@ -32,12 +32,12 @@ We'll be setting LimitRange to a namespace.
 
 ---
 
-### Connect to the master node
+### Connect to the worker node
 
 Connect to the worker node and create a namespace called ```restricted```.
 
 ```bash
-student@master: ̃$ k create ns restricted
+student@worker: ̃$ k create ns restricted
 namespace/restricted created
 ```
 
@@ -64,12 +64,12 @@ spec:
 ```
 
 ```bash
-student@master:~$ k -n restricted create -f restricted.yaml
+student@worker:~$ k -n restricted create -f restricted.yaml
 limitrange/restricted created
 ```
 
 ```bash
-student@master:~$ k -n restricted get limitrange
+student@worker:~$ k -n restricted get limitrange
 NAME         CREATED AT
 restricted   2021-01-30T21:44:13Z
 ```
@@ -79,12 +79,12 @@ restricted   2021-01-30T21:44:13Z
 Create a deployment in new namespace.
 
 ```bash
-student@master:~$ kubectl -n restricted create deploy restricted-hog --image vish/stress
+student@worker:~$ kubectl -n restricted create deploy restricted-hog --image vish/stress
 deployment.apps/restricted-hog created
 ```
 
 ```bash
-student@master:~$ kubectl -n restricted get pod $(kubectl -n restricted get pods -o jsonpath='{.items[0].metadata.name}') -o yaml
+student@worker:~$ kubectl -n restricted get pod $(kubectl -n restricted get pods -o jsonpath='{.items[0].metadata.name}') -o yaml
 ```
 
 ```yaml
@@ -115,7 +115,7 @@ spec:
 ```
 
 ```bash
-student@master:~$ kubectl get deploy,rs,po -A
+student@worker:~$ kubectl get deploy,rs,po -A
 NAMESPACE     NAME                                      READY   UP-TO-DATE   AVAILABLE   AGE
 default       deployment.apps/hog                       1/1     1            1           6m3s
 kube-system   deployment.apps/calico-kube-controllers   1/1     1            1           13d
@@ -128,7 +128,7 @@ restricted    deployment.apps/restricted-hog            1/1     1            1  
 In contrast with the deployment with no constraints (check [last exercise link](../day19)), top command won't show a stress process due to the LimitRange.
 
 ```bash
-student@master: ̃$ top
+student@worker: ̃$ top
 
 # Output omitted
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
@@ -142,7 +142,7 @@ student@master: ̃$ top
 In the last exercise, a stress process was created like the following.
 
 ```bash
-student@master: ̃$ kubectl create deployment hog --image vish/stress
+student@worker: ̃$ kubectl create deployment hog --image vish/stress
 deployment.apps/hog created
 ```
 
@@ -174,19 +174,19 @@ Set a stress deployment by adding the following to the yaml file.
 And apply the configuration.
 
 ```bash
-student@master: ̃$ kubectl delete deployment hog
+student@worker: ̃$ kubectl delete deployment hog
 deployment.apps "hog" deleted
 ```
 
 ```bash
-student@master: ̃$ kubectl create -f hog.yaml
+student@worker: ̃$ kubectl create -f hog.yaml
 deployment.apps/hog created
 ```
 
 Now you'll notice a stress process at the top.
 
 ```bash
-student@master: ̃$ top
+student@worker: ̃$ top
 
 # Output omitted
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
@@ -199,11 +199,11 @@ student@master: ̃$ top
 Create a new yaml manifest based on last stress deployment definition, but change namespace to ```restricted``` and comment selfLink line.
 
 ```bash
-student@master: ̃$ cp hog.yaml hog2.yaml
+student@worker: ̃$ cp hog.yaml hog2.yaml
 ```
 
 ```bash
-student@master: ̃$ vi hog2.yaml
+student@worker: ̃$ vi hog2.yaml
 ```
 
 ```yaml
@@ -230,12 +230,12 @@ student@master: ̃$ top
 ## Cleanup
 
 ```bash
-student@master:~$ k -n restricted delete deploy hog
+student@worker:~$ k -n restricted delete deploy hog
 deployment.apps "hog" deleted
 ```
 
 ```bash
-student@master:~$ k delete deploy hog
+student@worker:~$ k delete deploy hog
 deployment.apps "hog" deleted
 ```
 
