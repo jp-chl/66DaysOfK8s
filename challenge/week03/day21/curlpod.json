@@ -1,0 +1,20 @@
+{
+    "kind": "Pod",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "curlpod",
+        "namespace": "default",
+        "labels": {
+            "name": "curlpod"
+        }
+    },
+    "spec": {
+        "containers": [
+            {
+                "name": "curlpod",
+                "image": "nginx",
+                "ports": [{"containerPort": 80}]
+            }
+        ]
+    }
+}
