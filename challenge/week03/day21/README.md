@@ -22,7 +22,7 @@ Today, I have created a pod via Kubernetes API (without kubectl) securely with T
 
 ## Setup
 
-* A minikube local cluster have to be already configured and running.
+* A minikube local cluster has to be already configured and running.
 * The default config file (```$HOME/.kube``` directory has only one cluster configured, i.e. minikube)
 * All tests run on minikube.
 * All pods are deployed on default namespace

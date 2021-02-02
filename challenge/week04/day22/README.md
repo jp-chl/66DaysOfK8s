@@ -4,7 +4,7 @@ _Last update: 2021-02-01_
 
 ---
 
-Today, I have working in understanding API calls.
+Today, I have worked in understanding API calls.
 
 
 #kubernetes #learning #K8s #66DaysChallenge
@@ -24,7 +24,7 @@ Today, I have working in understanding API calls.
 
 ## Setup
 
-* A minikube local cluster have to be already configured and running.
+* A minikube local cluster has to be already configured and running.
 * All tests run on minikube.
 
 ---
