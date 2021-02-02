@@ -478,4 +478,5 @@ K8sPK1
 K8sPK1.pub
 
 *.pem
+config.yaml
 
