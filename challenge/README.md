@@ -30,7 +30,7 @@ Here's my knowledge base of what I've done in this challenge.
 19|Exercise| CPU and memory constraints|[Day19](./week03/day19)
 20|Exercise|Constraints for namespaces|[Day20](./week03/day20)
 21|Exercise|Create Pod via K8s Restful API|[Day21](./week03/day21)
-22|TBC|TBC|[Day22](./week04/day22)
+22|Exercise|Understanding API calls|[Day22](./week04/day22)
 23|TBC|TBC|[Day23](./week04/day23)
 24|TBC|TBC|[Day24](./week04/day24)
 25|TBC|TBC|[Day25](./week04/day25)

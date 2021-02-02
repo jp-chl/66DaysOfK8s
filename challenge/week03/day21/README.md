@@ -169,6 +169,9 @@ $ curl --cert ./client.pem --key ./client-key.pem --cacert ./ca.pem $SERVER/api/
   "items": [
     {
       "metadata": {
+```
+
+```bash
 # Output omitted
 ```
 
@@ -228,6 +231,9 @@ $ curl --cert ./client.pem --key ./client-key.pem --cacert ./ca.pem $SERVER/api/
     "managedFields": [
       {
         "manager": "curl",
+```
+
+```bash
 # Output omitted
 ```
 
