@@ -1,6 +1,6 @@
 # Day 23 of #66DaysOfK8s
 
-_Last update: 2021-01-31_
+_Last update: 2021-02-02_
 
 ---
 

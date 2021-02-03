@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Jan 30, 2021_.
+* _Last update: Feb 03, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -27,12 +27,12 @@ Here's my knowledge base of what I've done in this challenge.
 16|Kubernetes Architecture|Part 8: Cluster Networking|[Day16](./week03/day16)
 17|Kubernetes Maintenance|Part 1: Backup etcd database|[Day17](./week03/day17)
 18|Kubernetes Maintenance|Part 2: Upgrade cluster|[Day18](./week03/day18)
-19|Exercise| CPU and memory constraints|[Day19](./week03/day19)
+19|Exercise|CPU and memory constraints|[Day19](./week03/day19)
 20|Exercise|Constraints for namespaces|[Day20](./week03/day20)
 21|Exercise|Create Pod via K8s Restful API|[Day21](./week03/day21)
-22|Exercise|Understanding API calls|[Day22](./week04/day22)
-23|Exercise|API calls with a token provided by different K8s secrets|[Day23](./week04/day23)
-24|TBC|TBC|[Day24](./week04/day24)
+22|K8s Rest APIs|Understanding API calls|[Day22](./week04/day22)
+23|K8s Rest APIs|API calls with a token provided by different K8s secrets|[Day23](./week04/day23)
+24|K8s Rest APIs|Access via HTTP proxy|[Day24](./week04/day24)
 25|TBC|TBC|[Day25](./week04/day25)
 26|TBC|TBC|[Day26](./week04/day26)
 27|TBC|TBC|[Day27](./week04/day27)
