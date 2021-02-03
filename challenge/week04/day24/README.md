@@ -4,7 +4,7 @@ _Last update: 2021-02-03_
 
 ---
 
-Today, I have worked with K8s Rest API using and HTTP proxy.
+Today, I have worked with K8s Rest API using a HTTP proxy.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
@@ -36,7 +36,7 @@ Today, I have worked with K8s Rest API using and HTTP proxy.
 
 Instead of calling K8s API with kubectl, a HTTP proxy can be used.
 
-This proxy can be started with kubectl. By default, it starts on port 8001. We will start it in background (notice the process id)
+This proxy can be started with kubectl. By default, it starts on port 8001. We will start it in background (notice the process id).
 
 ```bash
 $ kubectl proxy --api-prefix=/ & echo $! > ./pid.file
