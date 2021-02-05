@@ -411,3 +411,9 @@ cronjob.batch "cronjob1" deleted
 * [Jobs (official site)](https://kubernetes.io/docs/concepts/workloads/controllers/job/)
 
 * [CronJob (official site)](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+
+---
+
+# Demo
+
+[![asciicast](https://asciinema.org/a/soRTB99Mpz4K41ncv0EmMelNV.svg)](https://asciinema.org/a/soRTB99Mpz4K41ncv0EmMelNV)
