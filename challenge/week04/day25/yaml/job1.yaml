@@ -1,0 +1,17 @@
+# Created by Abhishek Gupta
+# (https://github.com/abhirockzz/kubernetes-in-a-nutshell)
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job1
+spec:
+  template:
+    spec:
+      containers:
+        - name: job
+          image: busybox
+          args:
+            - /bin/sh
+            - -c
+            - date; echo sleeping....; sleep 90s; echo exiting...; date
+      restartPolicy: Never
