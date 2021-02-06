@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 04, 2021_.
+* _Last update: Feb 05, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -34,7 +34,7 @@ Here's my knowledge base of what I've done in this challenge.
 23|K8s Rest APIs|API calls with a token provided by different K8s secrets|[Day23](./week04/day23)
 24|K8s Rest APIs|Access via HTTP proxy|[Day24](./week04/day24)
 25|Exercise|Jobs and CronJobs|[Day25](./week04/day25)
-26|TBC|TBC|[Day26](./week04/day26)
+26|Exercise|Replica Sets|[Day26](./week04/day26)
 27|TBC|TBC|[Day27](./week04/day27)
 28|TBC|TBC|[Day28](./week04/day28)
 29|TBC|TBC|[Day29](./week05/day29)
