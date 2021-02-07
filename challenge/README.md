@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 06, 2021_.
+* _Last update: Feb 07, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -36,7 +36,7 @@ Here's my knowledge base of what I've done in this challenge.
 25|Exercise|Jobs and CronJobs|[Day25](./week04/day25)
 26|Exercise|Replica Sets|[Day26](./week04/day26)
 27|Exercise|Bitnami Sealed Secrets|[Day27](./week04/day27)
-28|TBC|TBC|[Day28](./week04/day28)
+28|Exercise|Daemon Sets|[Day28](./week04/day28)
 29|TBC|TBC|[Day29](./week05/day29)
 30|TBC|TBC|[Day30](./week05/day30)
 31|TBC|TBC|[Day31](./week05/day31)
