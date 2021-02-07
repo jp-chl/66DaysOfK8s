@@ -38,7 +38,10 @@ This is a practical exercise as a first approach to a ReplicaSet controller in K
 
 * Test examples of Replica sets.
 
+
 ---
+
+### Test examples of Replica sets
 
 Let's create a simple ReplicaSet.
 

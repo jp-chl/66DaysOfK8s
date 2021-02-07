@@ -47,7 +47,7 @@ apiVersion: v1
 clusters:
 - cluster:
     certificate-authority: /Users/xxx/.minikube/ca.crt
-    server: https://192.168.64.72:8443
+    server: https://192.168.64.72:8443 # <----
   name: minikube
 contexts:
 - context:
@@ -64,7 +64,7 @@ users:
     client-key: /Users/xxx/.minikube/profiles/minikube/client.key
 ```
 
-To make an API call to K8s (instead of using kubectl) you can use its embedded Rest API. Kubectl transform any command to its equivalent json format in order to call the Rest API.
+To make an API call to K8s (instead of using kubectl) you can use its embedded Rest API. Kubectl transforms any command to its equivalent json format in order to call the Rest API.
 
 Restful API can be called with curl. For instance, to get pods from default namespace you can call the ```/api/v1/pods``` endpoint:
 
@@ -99,7 +99,7 @@ It failed because that endpoint requires the appropriate certificate and keys (l
 
 ---
 
-Extract ```client-certificate```, ```client-key``` and ```certificate-authority``` from config file in order to get running pods with a ```curl``` call.
+Extract ```client-certificate```, ```client-key``` and ```certificate-authority``` from config file in order to create pods with a ```curl``` call.
 
 ```bash
 export CLIENT=$(cat $(grep client-cert ./config.yaml|cut -d" " -f 6))

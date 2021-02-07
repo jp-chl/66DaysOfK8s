@@ -35,7 +35,7 @@ Here's my knowledge base of what I've done in this challenge.
 24|K8s Rest APIs|Access via HTTP proxy|[Day24](./week04/day24)
 25|Exercise|Jobs and CronJobs|[Day25](./week04/day25)
 26|Exercise|Replica Sets|[Day26](./week04/day26)
-27|TBC|TBC|[Day27](./week04/day27)
+27|Exercise|Bitnami Sealed Secrets|[Day27](./week04/day27)
 28|TBC|TBC|[Day28](./week04/day28)
 29|TBC|TBC|[Day29](./week05/day29)
 30|TBC|TBC|[Day30](./week05/day30)
