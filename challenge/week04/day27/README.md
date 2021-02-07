@@ -12,7 +12,6 @@ Sealed Secrets helps to encrypts K8s secrets, useful to safely keep K8s secret m
 
 #kubernetes #learning #K8s #66DaysChallenge
 
-
 ---
 
 ## TL;DR
@@ -41,7 +40,7 @@ Sealed Secrets helps to encrypts K8s secrets, useful to safely keep K8s secret m
 
 ## Tasks
 
-* 
+* Encrypt a normal K8s secret with ```kubeseal```.
 
 ---
 
