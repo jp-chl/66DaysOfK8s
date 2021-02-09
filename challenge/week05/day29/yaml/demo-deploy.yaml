@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo
+  labels:
+    app: echo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app:  echo
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+      - image: nectiadocker2000/echo-ms-sb:v2
+        imagePullPolicy: IfNotPresent
+        name: echo
+        ports:
+        - containerPort: 8080
+          protocol: TCP
