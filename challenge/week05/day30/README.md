@@ -155,7 +155,7 @@ task-pv-volume
 ```
 
 ```bash
-kubectl get pv task-pv-volume -o jsonpath='{.spec.claimRef.name}'
+$ kubectl get pv task-pv-volume -o jsonpath='{.spec.claimRef.name}'
 task-pv-claim
 ```
 
