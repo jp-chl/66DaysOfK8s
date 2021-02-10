@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 08, 2021_.
+* _Last update: Feb 09, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -38,7 +38,7 @@ Here's my knowledge base of what I've done in this challenge.
 27|Exercise|Bitnami Sealed Secrets|[Day27](./week04/day27)
 28|Exercise|Daemon Sets part 1|[Day28](./week04/day28)
 29|Exercise|Daemon Sets part 2 (Loki stack)|[Day29](./week05/day29)
-30|TBC|TBC|[Day30](./week05/day30)
+30|Exercise|PV and PVC|[Day30](./week05/day30)
 31|TBC|TBC|[Day31](./week05/day31)
 32|TBC|TBC|[Day32](./week05/day32)
 33|TBC|TBC|[Day33](./week05/day33)
