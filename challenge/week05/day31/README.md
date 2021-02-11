@@ -39,7 +39,7 @@ Today, I have practiced with faster ways to create pods, deployments and service
 You can spawn a pod with:
 
 ```
-kubectl run <pod-name> --image=<container image>
+kubectl run <pod name> --image=<container image>
 ```
 
 For example, to start a pod named ```nginx``` with an image ```image:alpine```
@@ -72,7 +72,7 @@ $ student@master: kubectl describe pod nginx |grep -i image
 
 ---
 
-Now, create a pod called ```redis``` with image ```redis:alpine``` and labelling as "```dbtype=memory```".
+Now, create a pod called ```redis``` with image ```redis:alpine``` and labeling as "```dbtype=memory```".
 
 ```bash
 $ student@master: k run redis --image=redis:alpine -l=dbtype=memory
@@ -80,7 +80,7 @@ pod/redis created
 ```
 
 ```bash
-# Check correct labelling
+# Check correct labeling
 $ student@master: k describe pod redis |grep -i label
 Labels:       dbtype=memory
 ```
