@@ -240,7 +240,7 @@ It works as expected.
 Now, if we try from web to database tier it should not work.
 
 ```bash
-$ student@master: k -n middleware exec -ti $WEB_POD_NAME -- curl $DATABASE_POD_IP --max-time 5
+$ student@master: k -n web exec -ti $WEB_POD_NAME -- curl $DATABASE_POD_IP --max-time 5
 curl: (28) Connection timed out after 5001 milliseconds
 command terminated with exit code 28
 ```
@@ -248,7 +248,7 @@ command terminated with exit code 28
 Now, let's try from middleware tier to database one.
 
 ```bash
-$ student@master: k -n web exec -ti $MIDDLEWARE_POD_NAME -- curl $DATABASE_POD_IP --max-time 5
+$ student@master: k -n web middleware -ti $MIDDLEWARE_POD_NAME -- curl $DATABASE_POD_IP --max-time 5
 <!DOCTYPE html>
 <html>
 <head>

@@ -14,9 +14,6 @@ spec:
     podSelector:
       matchLabels:
         tier: web
-    namespaceSelector:
-      matchLabels:
-        name: web
     ports:
     - protocol: TCP
       port: 80
