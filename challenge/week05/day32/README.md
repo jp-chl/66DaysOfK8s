@@ -90,8 +90,8 @@ namespace/database created
 
 Two network policies will be set:
 
-* One for middleware namespace, allowing ```ingress``` traffic from namespaces labelled either as ```tier=web``` or ```tier=middleware```. It also allows ```egress``` traffic to namespaces labelled either ```tier=web``` or ```tier=middleware```. Both rules applied to any Pod (```podSelector: {}```)
-* Another for database namespace, with similar rules but for namespaces labelled either as ```tier=middleware``` or ```tier=database```.
+* One for middleware namespace, allowing ```ingress``` traffic from namespaces labeled either as ```tier=web``` or ```tier=middleware```. It also allows ```egress``` traffic to namespaces labeled either ```tier=web``` or ```tier=middleware```. Both rules applied to any Pod (```podSelector: {}```)
+* Another for database namespace, with similar rules but for namespaces labeled either as ```tier=middleware``` or ```tier=database```.
 
 ```yaml
 # Network policy for namespace middleware
