@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 10, 2021_.
+* _Last update: Feb 11, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -40,7 +40,7 @@ Here's my knowledge base of what I've done in this challenge.
 29|Exercise|Daemon Sets part 2 (Loki stack)|[Day29](./week05/day29)
 30|Exercise|PV and PVC|[Day30](./week05/day30)
 31|Exercise|Imperative commands|[Day31](./week05/day31)
-32|TBC|TBC|[Day32](./week05/day32)
+32|Exercise|Network policies|[Day32](./week05/day32)
 33|TBC|TBC|[Day33](./week05/day33)
 34|TBC|TBC|[Day34](./week05/day34)
 35|TBC|TBC|[Day35](./week05/day35)
