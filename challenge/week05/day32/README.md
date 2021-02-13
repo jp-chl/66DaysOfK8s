@@ -185,6 +185,9 @@ spec:
 ```bash
 $ student@master: k apply -f yaml/middleware-np.yaml
 networkpolicy.networking.k8s.io/middlware-network-policy created
+```
+
+```bash
 $ student@master: k apply -f yaml/database-np.yaml
 networkpolicy.networking.k8s.io/database-network-policy created
 ```
@@ -198,8 +201,14 @@ Three Pods will be created, simple nginx with curl access.
 ```bash
 $ student@master: k -n web create deploy nginx --image=ewoutp/docker-nginx-curl
 deployment.apps/nginx created
+```
+
+```bash
 $ student@master: k -n middleware create deploy nginx --image=ewoutp/docker-nginx-curl
 deployment.apps/nginx created
+```
+
+```bash
 $ student@master: k -n database create deploy nginx --image=ewoutp/docker-nginx-curl
 deployment.apps/nginx created
 ```
@@ -214,14 +223,14 @@ web           nginx-6d6cb79c77-h6rl2                     1/1     Running   0    
 ```
 
 ```bash
-$ student@master: export WEB_POD_NAME=$(k -n web get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
-$ student@master: export WEB_POD_IP=$(k -n web get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
+export WEB_POD_NAME=$(k -n web get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
+export WEB_POD_IP=$(k -n web get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
 
-$ student@master: export MIDDLEWARE_POD_NAME=$(k -n middleware get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
-$ student@master: export MIDDLEWARE_POD_IP=$(k -n middleware get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
+export MIDDLEWARE_POD_NAME=$(k -n middleware get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
+export MIDDLEWARE_POD_IP=$(k -n middleware get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
 
-$ student@master: export DATABASE_POD_NAME=$(k -n database get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
-$ student@master: export DATABASE_POD_IP=$(k -n database get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
+export DATABASE_POD_NAME=$(k -n database get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
+export DATABASE_POD_IP=$(k -n database get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
 ```
 
 ---
@@ -265,8 +274,14 @@ $ student@master: k -n middleware exec -ti $MIDDLEWARE_POD_NAME -- curl $DATABAS
 ```bash
 $ student@master: k -n web delete deploy nginx
 deployment.apps "nginx" deleted
+```
+
+```bash
 $ student@master: k -n middleware delete deploy nginx
 deployment.apps "nginx" deleted
+```
+
+```bash
 $ student@master: k -n database delete deploy nginx
 deployment.apps "nginx" deleted
 ```

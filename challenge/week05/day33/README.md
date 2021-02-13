@@ -25,235 +25,140 @@ Today, I have continued working with network policies, defining rules among pods
 * K8s cluster already created in GCP from scratch. Check the instructions in this [link](../../week01/day5/README.md).
 * Set an alias for kubectl (```alias k=kubectl```).
 * This lab does not work on minikube.
+* All tests are done in default namespace.
 
 ---
 
 ## Tasks
 
-* Create namespaces, each with its own label.
-* Set network policies.
-* Test communication among namespaces.
+* Create 3 Pods, each with its own label (api, bff, backend; respectively).
+* Set a network policy for a specific Pod.
+* Test communication among Pods.
 
 ---
 
-### Create namespaces, each with its own label
+### Create 3 Pods, each with its own label
 
-There will be three namespaces for web, middleware and database; respectively.
+In the [previous part](../day32/README.md), Network policies were applied to namespaces. In this part, to Pods.
 
-```yaml
-# namespace web
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: web
-  labels:
-    tier: web
-
-```
-
-```yaml
-# namespace middleware
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: middleware
-  labels:
-    tier: middleware
-```
-
-```yaml
-# namespace database
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: database
-  labels:
-    tier: database
-```
-
-Apply namespaces
+Based on the same image (simple nginx with curl command installed), create 3 Pods each with a unique label.
 
 ```bash
-$ student@master: k apply -f yaml/web-ns.yaml
-namespace/web created
-$ student@master: k apply -f yaml/middleware-ns.yaml
-namespace/middleware created
-$ student@master: k apply -f yaml/database-ns.yaml
-namespace/database created
+$ student@master: k run api --image=ewoutp/docker-nginx-curl -l=app=api
+pod/api created
+```
+
+```bash
+$ student@master: k run bff --image=ewoutp/docker-nginx-curl -l=app=backend
+pod/bff created
+```
+
+```bash
+$ student@master: k run backend --image=ewoutp/docker-nginx-curl -l=app=bff
+pod/backend created
 ```
 
 ---
 
-### Set network policies
+### Set a network policy for a specific Pod
 
-Two network policies will be set:
-
-* One for middleware namespace, allowing ```ingress``` traffic from namespaces labeled either as ```tier=web``` or ```tier=middleware```. It also allows ```egress``` traffic to namespaces labeled either ```tier=web``` or ```tier=middleware```. Both rules applied to any Pod (```podSelector: {}```)
-* Another for database namespace, with similar rules but for namespaces labeled either as ```tier=middleware``` or ```tier=database```.
+Create a network policy for ```backend``` Pod, only allowing ingress traffic from ```bff``` Pod.
 
 ```yaml
-# Network policy for namespace middleware
+# pod-np-ingress-bff-backend.yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: middlware-network-policy
-  namespace: middleware
+  name: backend-policy
+#  namespace: 
 spec:
-  podSelector: {} # All pods in the namespace
+  podSelector:
+    matchLabels:
+      app: backend
   policyTypes:
   - Ingress
-  - Egress
   ingress:
   - from:
-    - namespaceSelector:
+    - podSelector:
         matchLabels:
-          tier: web
+          app: bff
     ports:
     - protocol: TCP
       port: 80
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          tier: middleware
-    ports:
-    - protocol: TCP
-      port: 80
-  egress:
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          tier: database
-    ports:
-    - protocol: TCP
-      port: 80
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          tier: middleware
-    ports:
-    - protocol: TCP
-      port: 80
-  - to:
-    ports:
-    - protocol: UDP
-      port: 53 # DNS resolution
+```
+
+```bash
+$ student@master: k apply -f yaml/pod-np-ingress-bff-backend.yaml
+networkpolicy.networking.k8s.io/backend-policy created
+```
+
+```bash
+$ student@master: k get networkpolicies
+NAME             POD-SELECTOR   AGE
+backend-policy   app=backend    33s
+```
+
+```bash
+$ student@master: k describe networkpolicy backend-policy
 ```
 
 ```yaml
-# Network policy for namespace database
-apiVersion: networking.k8s.io/v1
-kind: NetworkPolicy
-metadata:
-  name: database-network-policy
-  namespace: database
-spec:
-  podSelector: {}
-  policyTypes:
-  - Ingress
-  - Egress
-  ingress:
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          tier: middleware
-    ports:
-    - protocol: TCP
-      port: 80
-  - from:
-    - namespaceSelector:
-        matchLabels:
-          tier: database
-    ports:
-    - protocol: TCP
-      port: 80
-  egress:
-  - to:
-    - namespaceSelector:
-        matchLabels:
-          tier: database
-    ports:
-    - protocol: TCP
-      port: 80
-  - to:
-    ports:
-    - protocol: UDP
-      port: 53
+Name:         backend-policy
+Namespace:    default
+Created on:   2021-02-13 00:11:31 +0000 UTC
+Labels:       <none>
+Annotations:  <none>
+Spec:
+  PodSelector:     app=backend
+  Allowing ingress traffic:
+    To Port: 80/TCP
+    From:
+      PodSelector: app=bff
+  Not affecting egress traffic
+  Policy Types: Ingress
+```
+
+### Test communication among Pods
+
+```bash
+$ student@master: k get pods -o wide
+NAME      READY   STATUS    RESTARTS   AGE   IP                NODE     NOMINATED NODE   READINESS GATES
+api       1/1     Running   0          10m   192.168.171.118   worker   <none>           <none>
+backend   1/1     Running   0          15m   192.168.171.117   worker   <none>           <none>
+bff       1/1     Running   0          16m   192.168.171.116   worker   <none>           <none>
 ```
 
 ```bash
-$ student@master: k apply -f yaml/middleware-np.yaml
-networkpolicy.networking.k8s.io/middlware-network-policy created
-$ student@master: k apply -f yaml/database-np.yaml
-networkpolicy.networking.k8s.io/database-network-policy created
-```
-
----
-
-### Test communication among namespaces
-
-Three Pods will be created, simple nginx with curl access.
-
-```bash
-$ student@master: k -n web create deploy nginx --image=ewoutp/docker-nginx-curl
-deployment.apps/nginx created
-$ student@master: k -n middleware create deploy nginx --image=ewoutp/docker-nginx-curl
-deployment.apps/nginx created
-$ student@master: k -n database create deploy nginx --image=ewoutp/docker-nginx-curl
-deployment.apps/nginx created
-```
-
-Retrieve Pods IPs:
-
-```bash
-$ student@master: k get pods -A -o wide|grep nginx
-database      nginx-6d6cb79c77-r6rwb                     1/1     Running   0          40s   192.168.171.109   worker   <none>           <none>
-middleware    nginx-6d6cb79c77-fr94f                     1/1     Running   0          41s   192.168.171.108   worker   <none>           <none>
-web           nginx-6d6cb79c77-h6rl2                     1/1     Running   0          41s   192.168.171.107   worker   <none>           <none>
+export BACKEND_POD_IP=$(k get pod -l=app=backend -o jsonpath='{.items[0].status.podIP}')
+export BFF_POD_IP=$(k get pod -l=app=bff -o jsonpath='{.items[0].status.podIP}')
 ```
 
 ```bash
-$ student@master: export WEB_POD_NAME=$(k -n web get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
-$ student@master: export WEB_POD_IP=$(k -n web get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
-
-$ student@master: export MIDDLEWARE_POD_NAME=$(k -n middleware get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
-$ student@master: export MIDDLEWARE_POD_IP=$(k -n middleware get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
-
-$ student@master: export DATABASE_POD_NAME=$(k -n database get pod -l=app=nginx -o jsonpath='{.items[0].metadata.name}')
-$ student@master: export DATABASE_POD_IP=$(k -n database get pod -l=app=nginx -o jsonpath='{.items[0].status.podIP}')
+echo $BACKEND_POD_IP
+192.168.171.117
 ```
 
----
-
-Test access from Web namespace to Middleware one.
-
 ```bash
-$ student@master: k -n web exec -ti $WEB_POD_NAME -- curl $MIDDLEWARE_POD_IP --max-time 5
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-# Output omitted
+echo $BFF_POD_IP
+192.168.171.116
 ```
 
-It works as expected.
-
-Now, if we try from web to database tier it should not work.
+```api``` Pod to ```backend``` Pod communication **is not** allowed
 
 ```bash
-$ student@master: k -n web exec -ti $WEB_POD_NAME -- curl $DATABASE_POD_IP --max-time 5
+$ student@master: k exec -ti api -- curl $BACKEND_POD_IP --max-time 5 | head -4
 curl: (28) Connection timed out after 5001 milliseconds
 command terminated with exit code 28
 ```
 
-Now, let's try from middleware tier to database one.
+```bff``` Pod to ```backend``` Pod communication **it is** allowed
 
 ```bash
-$ student@master: k -n web middleware -ti $MIDDLEWARE_POD_NAME -- curl $DATABASE_POD_IP --max-time 5
+$ student@master: k exec -ti bff -- curl $BACKEND_POD_IP --max-time 5 | head -4
 <!DOCTYPE html>
 <html>
 <head>
 <title>Welcome to nginx!</title>
-# Output omitted
 ```
 
 ---
@@ -261,21 +166,18 @@ $ student@master: k -n web middleware -ti $MIDDLEWARE_POD_NAME -- curl $DATABASE
 ### Cleanup
 
 ```bash
-$ student@master: k -n web delete deploy nginx
-deployment.apps "nginx" deleted
-$ student@master: k -n middleware delete deploy nginx
-deployment.apps "nginx" deleted
-$ student@master: k -n database delete deploy nginx
-deployment.apps "nginx" deleted
+k delete pod api
+k delete pod bff
+k delete pod backend
+
+k delete -f yaml/pod-np-ingress-bff-backend.yaml
 ```
 
 ```bash
-$ student@master: k delete -f yaml/.
-networkpolicy.networking.k8s.io "database-network-policy" deleted
-namespace "database" deleted
-networkpolicy.networking.k8s.io "middlware-network-policy" deleted
-namespace "middleware" deleted
-namespace "web" deleted
+pod "api" deleted
+pod "bff" deleted
+pod "backend" deleted
+networkpolicy.networking.k8s.io "backend-policy" deleted
 ```
 
 ---
