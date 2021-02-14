@@ -3,14 +3,13 @@
 _Last update: 2021-02-13_
 
 ---
-Today, I have worked with node selector label to assign a Pods.
+Today, I have worked with node selector to assign Pods to Nodes.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
 ---
 
 ## TL;DR
-
 
 
 [Demo](#demo)
