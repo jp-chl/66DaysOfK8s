@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 13, 2021_.
+* _Last update: Feb 14, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -43,7 +43,7 @@ Here's my knowledge base of what I've done in this challenge.
 32|Exercise|Network policies (part 1)|[Day32](./week05/day32)
 33|Exercise|Network policies (part 2)|[Day33](./week05/day33)
 34|Exercise|Node selector|[Day34](./week05/day34)
-35|TBC|TBC|[Day35](./week05/day35)
+35|Exercise|Taints and tolerations|[Day35](./week05/day35)
 36|TBC|TBC|[Day36](./week06/day36)
 37|TBC|TBC|[Day37](./week06/day37)
 38|TBC|TBC|[Day38](./week06/day38)

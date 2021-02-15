@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: another-pod
+  name: another-pod
+spec:
+  tolerations:
+  - key: node
+    operator: Equal
+    value: worker
+    effect: NoSchedule
+  containers:
+  - image: nginx
+    name: another-pod
