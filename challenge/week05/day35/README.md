@@ -214,6 +214,11 @@ pod "simple-pod" deleted
 pod "another-pod" deleted
 ```
 
+```bash
+$ student@master: k taint nodes worker node-
+node/worker untainted
+```
+
 ---
 
 ## References
