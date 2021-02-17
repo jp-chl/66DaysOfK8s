@@ -29,14 +29,14 @@ Today, I have worked with static Pods.
 ## Tasks
 
 * Identify kubelet process and its config file in both nodes.
-* Locate the static pods manifests directory.
+* Locate the static Pods manifests directory.
 * Deploy static Pods in both nodes.
 
 ---
 
 ### Identify kubelet process and its config file in both nodes
 
-Pod can be created without using the API Server, but with ```kubelet daemon```. Normally, [master node components](https://github.com/jp-chl/66DaysOfK8s/tree/master/challenge/week02/day9) such as the API Server, the Controller manager and the etcd database run as static Pods.
+Pods can be created without using the API Server, but with the ```kubelet daemon```. Normally, [master node components]../../week02/day9) such as the API Server, the Controller manager and the etcd database run as static Pods.
 
 The kubelet process periodically scans manifests in a folder. Any manifest placed there must be deployed as a static Pod.
 
@@ -119,7 +119,7 @@ $ student@worker: sudo ls -l /etc/kubernetes/manifests
 total 0
 ```
 
-As you can see, no static Pods are running on the worker node.
+As you can see in this example, no static Pods are running on the worker node.
 
 ---
 
