@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 15, 2021_.
+* _Last update: Feb 16, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -45,7 +45,7 @@ Here's my knowledge base of what I've done in this challenge.
 34|Exercise|Node selector|[Day34](./week05/day34)
 35|Exercise|Taints and tolerations|[Day35](./week05/day35)
 36|Exercise|Node affinity|[Day36](./week06/day36)
-37|TBC|TBC|[Day37](./week06/day37)
+37|Exercise|Static Pods|[Day37](./week06/day37)
 38|TBC|TBC|[Day38](./week06/day38)
 39|TBC|TBC|[Day39](./week06/day39)
 40|TBC|TBC|[Day40](./week06/day40)
