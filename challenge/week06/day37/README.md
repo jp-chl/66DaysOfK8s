@@ -36,7 +36,7 @@ Today, I have worked with static Pods.
 
 ### Identify kubelet process and its config file in both nodes
 
-Pods can be created without using the API Server, but with the ```kubelet daemon```. Normally, [master node components]../../week02/day9) such as the API Server, the Controller manager and the etcd database run as static Pods.
+Pods can be created without using the API Server, but with the ```kubelet daemon```. Normally, [master node components](../../week02/day9)) such as the API Server, the Controller manager and the etcd database run as static Pods.
 
 The kubelet process periodically scans manifests in a folder. Any manifest placed there must be deployed as a static Pod.
 
