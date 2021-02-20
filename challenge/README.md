@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 18, 2021_.
+* _Last update: Feb 19, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -48,7 +48,7 @@ Here's my knowledge base of what I've done in this challenge.
 37|Exercise|Static Pods|[Day37](./week06/day37)
 38|Exploration|Docker deprecation|[Day38](./week06/day38)
 39|Exploration|Operator pattern|[Day39](./week06/day39)
-40|TBC|TBC|[Day40](./week06/day40)
+40|Exploration|Service Mesh pattern|[Day40](./week06/day40)
 41|TBC|TBC|[Day41](./week06/day41)
 42|TBC|TBC|[Day42](./week06/day42)
 43|TBC|TBC|[Day43](./week07/day43)
