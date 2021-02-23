@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 21, 2021_.
+* _Last update: Feb 22, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -51,7 +51,7 @@ Here's my knowledge base of what I've done in this challenge.
 40|Exploration|Service Mesh pattern|[Day40](./week06/day40)
 41|Exploration|Differences between K8s managed service in EKS, GKE and AKS|[Day41](./week06/day41)
 42|Exploration|Lens App (IDE for K8s resources)|[Day42](./week06/day42)
-43|TBC|TBC|[Day43](./week07/day43)
+43|Exploration|Popeye App|[Day43](./week07/day43)
 44|TBC|TBC|[Day44](./week07/day44)
 45|TBC|TBC|[Day45](./week07/day45)
 46|TBC|TBC|[Day46](./week07/day46)
