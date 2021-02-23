@@ -3,7 +3,7 @@
 _Last update: 2021-02-22_
 
 ---
-Today, I have worked with [popeye](https://github.com/derailed/popeye), a command-line application than scans a Kubernetes cluster and reports potentials issues with deployed resources and configurations.
+Today, I have worked with [popeye](https://github.com/derailed/popeye), a command-line application that scans a Kubernetes cluster and reports potentials issues with deployed resources and configurations.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
