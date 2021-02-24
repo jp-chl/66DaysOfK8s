@@ -482,3 +482,6 @@ config.yaml
 
 
 pid.file
+
+metrics-server/
+metrics-server/*
