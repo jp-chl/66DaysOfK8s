@@ -1,8 +1,3 @@
-
-
-Inject secrets into Pods
-
-
 # Day 45 of #66DaysOfK8s
 
 _Last update: 2021-02-24_
@@ -25,7 +20,7 @@ Today, I have worked injecting secrets into Pods.
 
 ## Creating secrets
 
-You can create secrets either in imperative or in declarative way.
+You can create secrets either in an imperative or in a declarative way.
 
 Imperatively, let's create a secret called ```my-secret-1``` with three fields (```secret1```, ```secret2``` and ```secret3```).
 
@@ -52,9 +47,43 @@ mysecret2:  5 bytes
 mysecret3:  5 bytes
 ```
 
+By default, secrets are base64 coded.
+
+```bash
+$ kubectl get secret my-secret-1 -o jsonpath='{.data.mysecret1}';echo
+ZGF0YTE=
+```
+
+```bash
+$ echo $(kubectl get secret my-secret-1 -o jsonpath='{.data.mysecret1}' | base64 -d)
+data1
+```
+
+```bash
+$ kubectl get secret my-secret-1 -o jsonpath='{.data.mysecret2}';echo
+ZGF0YTI=
+```
+
+```bash
+$ echo $(kubectl get secret my-secret-1 -o jsonpath='{.data.mysecret2}' | base64 -d)
+data2
+```
+
+```bash
+$ kubectl get secret my-secret-1 -o jsonpath='{.data.mysecret3}';echo
+ZGF0YTM=
+```
+
+```bash
+$ echo $(kubectl get secret my-secret-1 -o jsonpath='{.data.mysecret3}' | base64 -d)
+data3
+```
+
 ---
 
 ## Injecting secrets into Pods
+
+You can select which data is injected from the secret object, or import them all as in this example:
 
 ```yaml
 # pod.yaml
@@ -105,4 +134,3 @@ mysecret1=data1
 mysecret2=data2
 mysecret3=data3
 ```
-
