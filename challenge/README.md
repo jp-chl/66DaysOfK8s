@@ -53,7 +53,7 @@ Here's my knowledge base of what I've done in this challenge.
 42|Exploration|Lens App (IDE for K8s resources)|[Day42](./week06/day42)
 43|Exploration|Popeye App (Scanner for K8s resources/configurations)|[Day43](./week07/day43)
 44|Exploration|Prometheus and Grafana|[Day44](./week07/day44)
-45|TBC|TBC|[Day45](./week07/day45)
+45|Exercise|Inject secrets into Pods|[Day45](./week07/day45)
 46|TBC|TBC|[Day46](./week07/day46)
 47|TBC|TBC|[Day47](./week07/day47)
 48|TBC|TBC|[Day48](./week07/day48)
