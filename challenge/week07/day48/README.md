@@ -3,7 +3,7 @@
 _Last update: 2021-02-27_
 
 ---
-Today, I have add user to minikube.
+Today, I have added a user to minikube.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
