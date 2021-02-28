@@ -485,3 +485,8 @@ pid.file
 
 metrics-server/
 metrics-server/*
+
+*.crt
+*.csr
+*.pem
+*.key

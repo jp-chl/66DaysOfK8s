@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Feb 25, 2021_.
+* _Last update: Feb 27, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -55,8 +55,8 @@ Here's my knowledge base of what I've done in this challenge.
 44|Exploration|Prometheus and Grafana|[Day44](./week07/day44)
 45|Exercise|Inject secrets into Pods|[Day45](./week07/day45)
 46|Exploration|Ingress controller|[Day46](./week07/day46)
-47|TBC|TBC|[Day47](./week07/day47)
-48|TBC|TBC|[Day48](./week07/day48)
+47|Exploration|RBAC (part 1)|[Day47](./week07/day47)
+48|Exercise|RBAC (part 2)|[Day48](./week07/day48)
 49|TBC|TBC|[Day49](./week07/day49)
 50|TBC|TBC|[Day50](./week08/day50)
 51|TBC|TBC|[Day51](./week08/day51)
