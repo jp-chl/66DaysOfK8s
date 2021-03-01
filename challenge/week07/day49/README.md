@@ -3,7 +3,7 @@
 _Last update: 2021-02-28_
 
 ---
-Today, in RBAC part 3, I have worked with Role and RoleBindinng.
+Today, in RBAC part 3, I have worked with Role and RoleBinding.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
