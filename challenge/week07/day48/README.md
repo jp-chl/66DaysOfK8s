@@ -3,7 +3,7 @@
 _Last update: 2021-02-27_
 
 ---
-Today, I have added a user to minikube.
+Today, in RBAC part 2, I have added a user to minikube.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
@@ -12,7 +12,7 @@ Today, I have added a user to minikube.
 ## Setup
 
 * Minikube, by default, gives you admin access to all resources. 
-* Set an alias for kubectl (```alias k=kubectl```)
+* Set an alias for kubectl (```alias k=kubectl```).
 
 ---
 
@@ -27,7 +27,7 @@ Today, I have added a user to minikube.
 
 ## Tasks
 
-* Create a user and added to kubeconfig
+* Create a user and add it to kubeconfig
 
 ---
 
@@ -42,13 +42,13 @@ e is 65537 (0x10001)
 ```
 
 ```bash
-$ openssl req -new -key myuser.key -out myuser.csr -subj "/CN=user1/O=group1"
+$ openssl req -new -key myuser.key -out myuser.csr -subj "/CN=myuser/O=group1"
 ```
 
 ```bash
 $ openssl x509 -req -in myuser.csr -CA ~/.minikube/ca.crt -CAkey ~/.minikube/ca.key -CAcreateserial -out myuser.crt -days 500
 Signature ok
-subject=/CN=user1/O=group1
+subject=/CN=myuser/O=group1
 Getting CA Private Key
 ```
 
@@ -58,7 +58,7 @@ myuser.csr myuser.key myuser.crt
 ```
 
 ```bash
-$ kubectl config set-credentials myuser --client-certificate=myuser.csr --client-key=myuser.key
+$ kubectl config set-credentials myuser --client-certificate=myuser.crt --client-key=myuser.key
 User "myuser" set.
 ```
 
@@ -76,7 +76,7 @@ $ kubectl config view
      client-key: ....../client.key
  - name: myuser
    user:
-     client-certificate: ....../kubernetes/66DaysOfK8s/challenge/week07/day48/cert/myuser.csr
+     client-certificate: ....../kubernetes/66DaysOfK8s/challenge/week07/day48/cert/myuser.crt
      client-key: ....../kubernetes/66DaysOfK8s/challenge/week07/day48/cert/myuser.key
 ```
 
@@ -87,5 +87,3 @@ $ kubectl config view
 * [Kubernetes RBAC 101: authorization](https://www.cncf.io/blog/2020/08/28/kubernetes-rbac-101-authorization/)
 
 * [Using RBAC Authorization (official site)](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
-
-
