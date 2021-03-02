@@ -13,7 +13,7 @@ Today, in RBAC part 3, I have worked with Role and RoleBinding.
 
 * Minikube, by default, gives you admin access to all resources. 
 * Set an alias for kubectl (```alias k=kubectl```).
-* Create a new user, for example, as in [last part](../day48).
+* Create a new user, for example, as in the [last part](../day48).
 
 ---
 

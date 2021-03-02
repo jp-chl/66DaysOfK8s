@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: sample-clusterrolebinding
+subjects:
+- kind: User
+  name: myuser
+  apiGroup: rbac.authorization.k8s.io
+roleRef: # After creation, it is not editable (it needs to be recreated)
+  kind: ClusterRole
+  name: sample-clusterrole
+  apiGroup: rbac.authorization.k8s.io
