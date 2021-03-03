@@ -125,7 +125,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IjRiUm5mdGdWQXBtMjBPTVdkTTJaWHMxWWFQS2NNNmd5cDF6c0Nt
 $ export POD_SA_TOKEN=$(k exec -ti tester -- cat ${TOKEN_MOUNTED_DIR}/token)
 ```
 
-Now, API call will work.
+Now, the API call will work.
 
 ```bash
 $ k exec -ti tester -- curl -H "Authorization: Bearer $POD_SA_TOKEN" -i https://kubernetes/api/v1 --insecure
