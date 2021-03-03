@@ -1,4 +1,4 @@
-# Day 48 of #66DaysOfK8s
+# Day 50 of #66DaysOfK8s
 
 _Last update: 2021-03-01_
 
@@ -13,7 +13,7 @@ Today, in RBAC part 4, I have worked with ClusterRole and ClusterRoleBinding.
 
 * Minikube, by default, gives you admin access to all resources. 
 * Set an alias for kubectl (```alias k=kubectl```).
-* Create a new user, for example, as in the [last part](../day48).
+* Create a new user, for example, as in the [part 2](../day48).
 
 ---
 
@@ -74,7 +74,6 @@ roleRef: # After creation, it is not editable (it needs to be recreated)
 ## Create a CR, a CRB, and test access to pods in different namespaces
 
 Create a new user, called "myuser". A [utility shell](../../week07/day49/newuser.sh) can be used. 
-
 
 ```bash
 $ ../../week07/day49/newuser.sh myuser

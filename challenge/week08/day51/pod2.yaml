@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: tester2
+  name: tester2
+spec:
+  serviceAccountName: new-sa
+  containers:
+  - image: nectiadocker2000/podtesterspring:v2
+    name: tester2

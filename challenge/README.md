@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Mar 1, 2021_.
+* _Last update: Mar 2, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -59,7 +59,7 @@ Here's my knowledge base of what I've done in this challenge.
 48|Exercise|RBAC (part 2)|[Day48](./week07/day48)
 49|Exercise|RBAC (part 3)|[Day49](./week07/day49)
 50|Exercise|RBAC (part 4)|[Day50](./week08/day50)
-51|TBC|TBC|[Day51](./week08/day51)
+51|Exercise|RBAC (part 5)|[Day51](./week08/day51)
 52|TBC|TBC|[Day52](./week08/day52)
 53|TBC|TBC|[Day53](./week08/day53)
 54|TBC|TBC|[Day54](./week08/day54)
