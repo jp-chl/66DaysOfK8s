@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tester
+spec:
+  containers:
+  - image: nectiadocker2000/podtesterspring:v2
+    name: tester
+    livenessProbe:
+      httpGet:
+        path: /healthz/ready
+        port: 8080
+      initialDelaySeconds: 3
+      periodSeconds: 5
