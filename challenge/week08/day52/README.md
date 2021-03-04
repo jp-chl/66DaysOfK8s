@@ -40,7 +40,7 @@ _"The kubelet uses liveness probes to know when to restart a container. For exam
 
 In order to automatically check Pod's health, you can set a Pod's liveness probe in order to certify whether Pod is alive.
 
-In the Pod's container spec you can add liveness block to do it. One of the most common ways to handle this is to define a container endpoint that the Kubelet pings periodically. It will be considered healthy while it responds a 200 http code, or unhealthy otherwise.
+In the Pod's container spec you can add liveness block to do it. One of the most common ways to handle this is to define a container endpoint that the Kubelet pings periodically. It will be considered healthy while it responds a 200 http status code, or unhealthy otherwise.
 
 A typical liveness probe looks like:
 
@@ -109,7 +109,7 @@ I am alive
 
 ## Set a not-healthy status on Pod
 
-If we shoot at /misbehave endpoint, liveness one will return a non 200 http code.
+If we shoot at /misbehave endpoint, liveness one will return a non 200 http status code.
 
 ```bash
 $ k exec -ti tester -- curl -i localhost:8080/misbehave
@@ -141,7 +141,7 @@ deployment.apps "hog" deleted
 
 ## Test Pod restarting
 
-After three attempts the Pod will be restarted is non 200 http code is returned from liveness configured endpoint.
+After three attempts the Pod will be restarted if non 200 http status code is returned from liveness configured endpoint.
 
 ```bash
 $ k apply -f pod.yaml
