@@ -3,7 +3,7 @@
 _Last update: 2021-03-03_
 
 ---
-Today, I have worked with liveness probe.
+Today, I have worked with the Liveness probe.
 
 #kubernetes #learning #K8s #66DaysChallenge
 
