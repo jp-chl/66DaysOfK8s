@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: my-config-map
+  namespace: default
+data:
+  # Configuration values can be set as key-value properties
+  APP_PORT: "3000"
+  MONGO_URI: mongodb://my-release-mongodb:27017
+  DB_NAME: admin
+
