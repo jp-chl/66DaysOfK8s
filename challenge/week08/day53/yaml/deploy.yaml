@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readiness-test
+  labels:
+    app: readiness-test
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: readiness-test
+  template:
+    metadata:
+      labels:
+        app: readiness-test
+    spec:
+      containers:
+      - image: nectiadocker2000/nest-readiness:v1
+        imagePullPolicy: IfNotPresent
+        name: readiness-test
+        env:
+        - name: ENV_VARIABLE_TEST_1
+          value: my-env-variable-value
+        envFrom:
+        - configMapRef:
+            name: my-config-map
+        - secretRef:
+            name: my-secret-map
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /api/v1/health/liveness
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /api/v1/health/readiness
+            port: 3000
+          initialDelaySeconds: 10
+          periodSeconds: 30
