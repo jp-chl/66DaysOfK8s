@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Mar 5, 2021_.
+* _Last update: Mar 6, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -63,7 +63,7 @@ Here's my knowledge base of what I've done in this challenge.
 52|Exercise|Liveness probe|[Day52](./week08/day52)
 53|Exercise|Readiness probe|[Day53](./week08/day53)
 54|Exercise|Resource quota|[Day54](./week08/day54)
-55|TBC|TBC|[Day55](./week08/day55)
+55|Exercise|Resource quota (part 2)|[Day55](./week08/day55)
 56|TBC|TBC|[Day56](./week08/day56)
 57|TBC|TBC|[Day57](./week09/day57)
 58|TBC|TBC|[Day58](./week09/day58)

@@ -41,6 +41,7 @@ _"A resource quota, defined by a ResourceQuota object, provides constraints that
 
 ```bash
 $ k create ns quota-test
+namespace/quota-test created
 ```
 
 ```bash
@@ -156,21 +157,6 @@ Error from server (Forbidden): error when creating "STDIN": pods "pod3" is forbi
 ## Cleanup
 
 ```bash
-$ k -n quota-test delete quota test-cpu-quota --wait=false
-resourcequota "test-cpu-quota" deleted
-```
-
-```bash
-$ k -n quota-test delete pod pod1 --wait=false
-pod "pod1" deleted
-```
-
-```bash
-$ k -n quota-test delete pod pod2 --wait=false
-pod "pod2" deleted
-```
-
-```bash
 $ k delete ns quota-test --wait=false
 namespace "quota-test" deleted
 ```
@@ -180,4 +166,3 @@ namespace "quota-test" deleted
 ## References
 
 * [Resource Quotas (official site)](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
-* []()
