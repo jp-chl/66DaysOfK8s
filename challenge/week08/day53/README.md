@@ -214,7 +214,7 @@ release "my-release" uninstalled
 ```
 
 ```bash
-$ k apply -f yaml/.
+$ k delete -f yaml/.
 configmap "my-config-map" deleted
 deployment.apps "readiness-test" deleted
 secret "my-secret-map" deleted
