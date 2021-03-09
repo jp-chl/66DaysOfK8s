@@ -3,7 +3,7 @@
 _Last update: 2021-03-08_
 
 ---
-Today I have worked in 2nd part of Deployment management (Rolling Update).
+Today I have worked in the 2nd part of Deployment management (Rolling Update).
 
 #kubernetes #learning #K8s #66DaysChallenge
 
