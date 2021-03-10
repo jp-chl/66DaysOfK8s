@@ -66,7 +66,7 @@ Here's my knowledge base of what I've done in this challenge.
 55|Exercise|Resource quota (part 2)|[Day55](./week08/day55)
 56|Exercise|Deployment management (part 1)|[Day56](./week08/day56)
 57|Exercise|Deployment management (part 2)|[Day57](./week09/day57)
-58|TBC|TBC|[Day58](./week09/day58)
+58|Exercise|Deployment management (part 3)|[Day58](./week09/day58)
 59|TBC|TBC|[Day59](./week09/day59)
 60|TBC|TBC|[Day60](./week09/day60)
 61|TBC|TBC|[Day61](./week09/day61)
