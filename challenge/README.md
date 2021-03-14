@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Mar 11, 2021_.
+* _Last update: Mar 12, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -69,7 +69,7 @@ Here's my knowledge base of what I've done in this challenge.
 58|Exercise|Deployment management (part 3)|[Day58](./week09/day58)
 59|Exploration|StatefulSet|[Day59](./week09/day59)
 60|Exercise|StatefulSet (part 2)|[Day60](./week09/day60)
-61|TBC|TBC|[Day61](./week09/day61)
+61|Exercise|StatefulSet (part 2)|[Day61](./week09/day61)
 62|TBC|TBC|[Day62](./week09/day62)
 63|TBC|TBC|[Day63](./week09/day63)
 64|TBC|TBC|[Day64](./week10/day64)

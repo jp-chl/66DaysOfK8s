@@ -11,11 +11,11 @@ Today I have worked with Stateful Sets.
 
 ## Takeaways
 
-* StatefulSets is the workload API object used to manage stateful applications.
+* StatefulSet is the workload API object used to manage stateful applications.
 
 * It's similar to a Deployment, but a StatefulSet keeps track of its Pod's identities in an ordered way (e.g. like pod-0, pod-1, etc.).
 
-* A StatefulSet links every Pod to a PV, and after a Pod is destroyed is linked again to the same PV; A StatefulSet deletion does not trigger PVC/PV elimination (it has to be done manually).
+* A StatefulSet links every Pod to a PV, and after a Pod is destroyed it is linked again to the same PV; A StatefulSet deletion does not trigger PVC/PV elimination (it has to be done manually).
 
 * A common use case is when you need a DB cluster where a master should be always identifiable (for instance, a Pod could be named as mysql-0).
 
