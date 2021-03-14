@@ -490,3 +490,5 @@ metrics-server/*
 *.csr
 *.pem
 *.key
+
+cka-exercises.txt
