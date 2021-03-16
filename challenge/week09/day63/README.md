@@ -59,6 +59,8 @@ FIELDS:
 
 ## References
 
+* [Part 3](../../week10/day64)
+
 * [Kubernetes Journey — CKA / CKAD Exam Tips (ITNext article by Brad McCoy)](https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833)
 
 * [CKAS exercises (Github article by Dimitris-Ilias Gkanatsios)](https://github.com/dgkanatsios/CKAD-exercises)

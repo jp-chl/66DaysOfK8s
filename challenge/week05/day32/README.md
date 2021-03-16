@@ -299,4 +299,5 @@ namespace "web" deleted
 
 ## References
 
+* [Part2](../day33)
 * [Network policies (official site)](https://kubernetes.io/docs/concepts/services-networking/network-policies/)

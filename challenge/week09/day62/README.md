@@ -24,6 +24,7 @@ Today I have been practicing with CKAD exercises.
 ## References
 
 * [Part 2](../day63)
+
 * [Kubernetes Journey — CKA / CKAD Exam Tips (ITNext article by Brad McCoy)](https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833)
 
 * [CKAS exercises (Github article by Dimitris-Ilias Gkanatsios)](https://github.com/dgkanatsios/CKAD-exercises)
