@@ -9,9 +9,9 @@ Today, in part 2, I have continued to practice with CKAD exercises.
 
 ---
 
-## Takeaways
+> _First part in [this link](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week09/day62)_
 
-* First part in [this link](../day62).
+## Takeaways
 
 * In my second attempt, I've had to work with [Node affinity](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week06/day36), [Taints and tolerations](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week05/day35), [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/), [PV](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week05/day30), [Jobs](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week04/day25).
 
@@ -59,7 +59,11 @@ FIELDS:
 
 ## References
 
-* [Part 3](../../week10/day64)
+* [Part 3](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week10/day64)
+
+* [Kubectl imperative commands guide (official site)](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+
+* [Kubernetes Cheat Sheet (official site)](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 * [Kubernetes Journey — CKA / CKAD Exam Tips (ITNext article by Brad McCoy)](https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833)
 

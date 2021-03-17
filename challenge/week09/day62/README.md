@@ -23,7 +23,11 @@ Today I have been practicing with CKAD exercises.
 
 ## References
 
-* [Part 2](../day63)
+* [Part 2](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week09/day63)
+
+* [Kubectl imperative commands guide (official site)](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+
+* [Kubernetes Cheat Sheet (official site)](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 * [Kubernetes Journey — CKA / CKAD Exam Tips (ITNext article by Brad McCoy)](https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833)
 
