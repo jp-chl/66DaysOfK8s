@@ -9,11 +9,11 @@ Today, in part 3, I have continued to practice with CKAD exercises.
 
 ---
 
+> _First part in [this link](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week09/day62)_
+
 ## Takeaways
 
-* First part in [this link](../day62).
-
-* In my third attempt, I've had to work with [Taints and tolerations](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week05/day35), [Network policies](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week05/day32), [executing commands in Pods](), and [mounting volumes in Pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/) (either from an [emptyDir](https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/) or [from a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)).
+* In my third attempt, I've had to work with [Taints and tolerations](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week05/day35), [Network policies](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week05/day32), [executing commands in Pods](https://kubernetes.io/docs/concepts/workloads/pods/#pod-templates), and [mounting volumes in Pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/) (either from an [emptyDir](https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/) or [from a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)).
 
 * In my case, I've had some issues by attempting to run a command within a Pod. Normally, most of the container public images have already installed ```sh```, so a container command should look like this:
 
@@ -32,6 +32,12 @@ spec:
 ---
 
 ## References
+
+* [Part 4](https://github.com/jp-chl/66DaysOfK8s/blob/master/challenge/week10/day65)
+
+* [Kubectl imperative commands guide (official site)](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
+
+* [Kubernetes Cheat Sheet (official site)](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 * [Kubernetes Journey — CKA / CKAD Exam Tips (ITNext article by Brad McCoy)](https://itnext.io/kubernetes-journey-cka-ckad-exam-tips-ff73e4672833)
 

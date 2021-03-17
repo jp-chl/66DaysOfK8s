@@ -4,7 +4,7 @@ Here's my knowledge base of what I've done in this challenge.
 
 * _Start date: Jan 11, 2021_.
 
-* _Last update: Mar 15, 2021_.
+* _Last update: Mar 16, 2021_.
 
 ---
 **Day**|**About**|**Summary**|**Detail**
@@ -73,5 +73,5 @@ Here's my knowledge base of what I've done in this challenge.
 62|Exploration|CKAD exercises|[Day62](./week09/day62)
 63|Exploration|CKAD exercises (part 2)|[Day63](./week09/day63)
 64|Exploration|CKAD exercises (part 3)|[Day64](./week10/day64)
-65|TBC|TBC|[Day65](./week10/day65)
+65|Exploration|CKAD exercises (part 4)|[Day65](./week10/day65)
 66|TBC|TBC|[Day66](./week10/day66)
