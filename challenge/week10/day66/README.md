@@ -145,6 +145,8 @@ replicaset.apps/my-ingress-nginx-controller-694d5f5474   1         1         1  
 To change any configuration, a property can be updated by using ```--set```. In the next example, the number of pods.
 > To see the full list: ```helm show values ingress-nginx/ingress-nginx > yaml/values.yaml``` (e.g. replicaCount is at line 271 of the yaml file).
 
+Every release change spawns a new ```revision```, in this case number ```2```.
+
 ```bash
 $ helm upgrade my-ingress-nginx ingress-nginx/ingress-nginx --set=controller.replicaCount=3
 Release "my-ingress-nginx" has been upgraded. Happy Helming!
@@ -152,7 +154,7 @@ NAME: my-ingress-nginx
 LAST DEPLOYED: Wed Mar 17 23:43:48 2021
 NAMESPACE: default
 STATUS: deployed
-REVISION: 2 # Every release change spawns a new revision
+REVISION: 2
 TEST SUITE: None
 # Output omitted
 ```
