@@ -14,6 +14,10 @@ In my case, I wanted to improve my skills in Kubernetes (check it [here](./chall
 
 ---
 
+Suggested order in this [link](./challenge/suggested-order.md).
+
+---
+
 ## Disclaimer
 
 Most of the material is available on public internet articles.
